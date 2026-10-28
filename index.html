@@ -6,699 +6,156 @@
 <title>Make Money Online</title>
 
 <style>
-:root {
-  --green:#087f5b;
-  --dark:#043b2f;
-  --light:#f1f5f9;
-  --white:#ffffff;
-  --border:#d5e0e8;
-}
-* {box-sizing:border-box}
-body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:var(--light);
-  color:#172033;
-}
-header {
-  background:linear-gradient(120deg,#043b2f,#087f5b);
-  color:white;
-  padding:20px 12px;
-  text-align:center;
-}
-header h1 {margin:0;font-size:25px}
-header p {margin:8px 0}
-.live {
-  display:inline-block;
-  background:#064e3b;
-  padding:8px 13px;
-  border:1px solid #34d399;
-  border-radius:25px;
-  font-size:13px;
-}
-nav {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  background:var(--dark);
-}
-nav button {
-  background:transparent;
-  color:white;
-  border:0;
-  padding:13px 12px;
-  cursor:pointer;
-  font-size:14px;
-}
-nav button:hover {background:var(--green)}
-main {max-width:1000px;margin:20px auto;padding:12px}
-.card {
-  background:white;
-  border-radius:14px;
-  padding:20px;
-  margin-bottom:17px;
-  box-shadow:0 3px 14px #0000000b;
-}
-h2 {color:var(--green);margin-top:0}
-input,select {
-  width:100%;
-  padding:13px;
-  margin:7px 0 15px;
-  border:1px solid var(--border);
-  border-radius:7px;
-  font-size:16px;
-  background:white;
-}
-label {font-weight:600}
-button.action {
-  border:0;
-  padding:12px 17px;
-  border-radius:7px;
-  background:var(--green);
-  color:white;
-  cursor:pointer;
-  margin:4px 3px 4px 0;
-}
-button.secondary {background:#245b9e}
-button.danger {background:#b91c1c}
-button:disabled {opacity:.5}
-.hidden {display:none!important}
-.note {
-  background:#fffbeb;
-  color:#854d0e;
-  padding:13px;
-  border-radius:8px;
-  line-height:1.5;
-}
-.success {color:#047857}
-.error {color:#b91c1c}
-.stat {
-  display:inline-block;
-  vertical-align:top;
-  background:#ecfdf5;
-  padding:14px;
-  border-radius:8px;
-  margin:4px;
-  min-width:125px;
-}
-.stat strong {display:block;font-size:22px;margin-top:8px}
-.steps {
-  display:flex;
-  gap:6px;
-  margin:15px 0 22px;
-}
-.step {
-  flex:1;
-  text-align:center;
-  padding:10px 2px;
-  border-radius:7px;
-  background:#e2e8f0;
-  font-size:12px;
-}
-.step.active {background:var(--green);color:white}
-.progress {
-  height:7px;
-  background:#e2e8f0;
-  border-radius:9px;
-  overflow:hidden;
-  margin-bottom:18px;
-}
-.progress div {
-  height:100%;
-  width:25%;
-  background:#10b981;
-  transition:width .2s;
-}
-.table-wrap {overflow-x:auto}
-table {border-collapse:collapse;width:100%;font-size:13px}
-td,th {padding:9px;border-bottom:1px solid #e2e8f0;text-align:left}
-footer {text-align:center;padding:22px;color:#64748b}
-.password-line {display:flex;gap:8px;align-items:center}
-.password-line input {flex:1;min-width:0}
-.password-line label {white-space:nowrap;font-size:13px}
-.hero {
-  padding:35px 20px;
-  color:white;
-  border-radius:13px;
-  background:linear-gradient(135deg,#032b27,#086e53);
-}
-.hero h2 {color:white;font-size:32px}
-.hero strong {color:#34d399}
-@media(max-width:500px) {
-  nav button {padding:12px 8px;font-size:12px}
-  .card {padding:17px}
-  .hero h2 {font-size:27px}
-  .stat {min-width:105px}
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
+header{background:#064e3b;color:white;text-align:center;padding:20px 10px}
+header h1{margin:0}
+nav{display:flex;flex-wrap:wrap;justify-content:center;background:#033c2d}
+nav button{border:0;background:none;color:white;padding:14px 10px;font-size:14px;cursor:pointer}
+nav button:hover{background:#087f5b}
+main{max-width:850px;margin:18px auto;padding:10px}
+.card{background:white;padding:20px;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 8px #0001}
+h2{color:#087f5b;margin-top:0}
+input,select{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #cbd5e1;border-radius:7px;font-size:16px}
+label{font-weight:bold}
+button.action{background:#087f5b;color:white;border:0;padding:12px 16px;border-radius:7px;cursor:pointer;margin:4px 2px}
+button.red{background:#b91c1c}
+button.blue{background:#245b9e}
+.hidden{display:none!important}
+.note{padding:12px;background:#fffbeb;border-radius:8px;color:#854d0e;line-height:1.5}
+.success{color:#047857}
+.error{color:#b91c1c}
+.stat{display:inline-block;padding:13px;margin:4px;background:#ecfdf5;border-radius:8px;min-width:120px}
+.stat strong{display:block;font-size:21px;margin-top:5px}
+.steps{display:flex;gap:5px;margin:15px 0}
+.step{flex:1;text-align:center;background:#e2e8f0;padding:10px 3px;border-radius:6px;font-size:12px}
+.step.active{background:#087f5b;color:white}
+.password-row{display:flex;gap:8px;align-items:center}
+.password-row input[type=password],.password-row input[type=text]{flex:1;min-width:0}
+.password-row label{font-size:12px;white-space:nowrap}
+.password-row input[type=checkbox]{width:auto;margin:0}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+td,th{padding:9px;border-bottom:1px solid #ddd;text-align:left}
+footer{text-align:center;padding:20px;color:#64748b}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>MAKE MONEY <span style="color:#34d399">ONLINE</span></h1>
-  <p>Registration • Referrals • Payment Tracking</p>
+<h1>MAKE MONEY ONLINE</h1>
+<p>Registration • Referrals • Payment Tracking</p>
+<p>🟢 Visits on this browser: <strong id="liveCount">0</strong></p>
+<p>Managed by Precious Nyirenda</p>
 
-  <div class="live">
-    🟢 Visits recorded on this browser:
-    <strong id="liveCount">0</strong>
-  </div>
-
-  <p style="font-size:12px">Managed by Precious Nyirenda</p>
-
-  <label for="language" style="font-size:13px">🌍 Language</label>
-  <select id="language" onchange="changeLanguage()"
-    style="width:auto;padding:7px;margin:8px">
-    <option value="en">English</option>
-    <option value="ny">Chichewa</option>
-    <option value="sw">Kiswahili</option>
-    <option value="fr">Français</option>
-    <option value="pt">Português</option>
-    <option value="ar">العربية</option>
-    <option value="ha">Hausa</option>
-    <option value="yo">Yorùbá</option>
-    <option value="zu">isiZulu</option>
-    <option value="am">አማርኛ</option>
-  </select>
+<label for="language">Language:</label>
+<select id="language" onchange="changeLanguage()" style="width:auto">
+<option value="en">English</option>
+<option value="ny">Chichewa</option>
+<option value="sw">Kiswahili</option>
+<option value="fr">French</option>
+<option value="pt">Portuguese</option>
+<option value="ar">Arabic</option>
+<option value="ha">Hausa</option>
+<option value="yo">Yoruba</option>
+<option value="zu">Zulu</option>
+<option value="am">Amharic</option>
+</select>
 </header>
 
 <nav>
-  <button onclick="showPage('home')" data-en="Home">Home</button>
-  <button onclick="showPage('register')" data-en="Register">Register</button>
-  <button onclick="showPage('login')" data-en="Login">Login</button>
-  <button onclick="showPage('payment')" data-en="Payment">Payment</button>
-  <button onclick="showPage('dashboard')" data-en="Dashboard">Dashboard</button>
-  <button onclick="showPage('admin')" data-en="Admin">Admin</button>
+<button type="button" onclick="showPage('home')">Home</button>
+<button type="button" onclick="showPage('register')">Register</button>
+<button type="button" onclick="showPage('login')">Login</button>
+<button type="button" onclick="showPage('payment')">Payment</button>
+<button type="button" onclick="showPage('dashboard')">Dashboard</button>
+<button type="button" onclick="showPage('admin')">Admin</button>
 </nav>
 
 <main>
 
 <!-- HOME -->
 <section id="home" class="page">
-  <div class="card hero">
-    <h2>Make Money <strong>Online</strong></h2>
-    <p>Register, manage your account, and track payment status.</p>
-    <p>Registration fee: <strong>MK 5,000</strong></p>
-    <button class="action" onclick="showPage('register')">
-      Get Started →
-    </button>
-  </div>
+<div class="card">
+<h2>Welcome!</h2>
+<p>Register to create an account and track your payment status.</p>
+<h3>Registration fee: MK 5,000</h3>
+<button type="button" class="action" onclick="showPage('register')">Register Now</button>
+</div>
 
-  <div class="card">
-    <h2>How It Works</h2>
-    <p>1. Create your account.</p>
-    <p>2. Enter your contact details.</p>
-    <p>3. Read the payment instructions.</p>
-    <p>4. Submit your transaction reference for review.</p>
-    <p class="note">
-      Paying a registration fee does not guarantee earnings.
-      Check the terms and conditions before sending money.
-    </p>
-  </div>
+<div class="card">
+<h2>How It Works</h2>
+<p>1. Create your account.</p>
+<p>2. Enter your country and phone number.</p>
+<p>3. Review the payment instructions.</p>
+<p>4. Submit your transaction reference.</p>
+<p class="note">Registration does not guarantee earnings. Check the terms before paying.</p>
+</div>
 </section>
 
-<!-- FOUR-STEP REGISTRATION -->
+<!-- REGISTRATION -->
 <section id="register" class="page hidden">
-  <div class="card">
-    <h2>Create Your Account</h2>
-
-    <div class="steps">
-      <div class="step active" id="stepLabel1">1. Details</div>
-      <div class="step" id="stepLabel2">2. Country</div>
-      <div class="step" id="stepLabel3">3. Security</div>
-      <div class="step" id="stepLabel4">4. Confirm</div>
-    </div>
-
-    <div class="progress"><div id="progressBar"></div></div>
-
-    <form id="registerForm">
-
-      <!-- STEP 1 -->
-      <div class="regStep" id="regStep1">
-        <h3>Step 1: Personal Details</h3>
-
-        <label for="regName">Full name</label>
-        <input id="regName" required maxlength="80"
-          placeholder="Enter your full name">
-
-        <label for="regUsername">Username</label>
-        <input id="regUsername" required maxlength="30"
-          placeholder="Choose a username">
-
-        <button type="button" class="action" onclick="nextStep(1)">
-          Next →
-        </button>
-      </div>
-
-      <!-- STEP 2 -->
-      <div class="regStep hidden" id="regStep2">
-        <h3>Step 2: Country and Phone</h3>
-
-        <label for="regCountry">Choose your African country</label>
-        <select id="regCountry" required></select>
-
-        <label for="regPhone">Phone number</label>
-        <input id="regPhone" type="tel" required
-          placeholder="Enter phone number">
-
-        <label for="regReferral">Referral code (optional)</label>
-        <input id="regReferral" placeholder="Referral code">
-
-        <button type="button" class="action secondary"
-          onclick="prevStep(2)">← Back</button>
-        <button type="button" class="action" onclick="nextStep(2)">
-          Next →
-        </button>
-      </div>
-
-      <!-- STEP 3 -->
-      <div class="regStep hidden" id="regStep3">
-        <h3>Step 3: Create Password</h3>
-
-        <label for="regPassword">Password</label>
-        <div class="password-line">
-          <input id="regPassword" type="password" minlength="8"
-            required autocomplete="new-password"
-            placeholder="At least 8 characters">
-          <label>
-            <input type="checkbox" style="width:auto;margin:0"
-              onchange="togglePassword('regPassword',this)">
-            Show
-          </label>
-        </div>
-
-        <label for="regPassword2">Confirm password</label>
-        <div class="password-line">
-          <input id="regPassword2" type="password" minlength="8"
-            required autocomplete="new-password"
-            placeholder="Enter password again">
-          <label>
-            <input type="checkbox" style="width:auto;margin:0"
-              onchange="togglePassword('regPassword2',this)">
-            Show
-          </label>
-        </div>
-
-        <p class="note">
-          Use a unique password. This local demonstration is not
-          suitable for storing real passwords securely.
-        </p>
-
-        <button type="button" class="action secondary"
-          onclick="prevStep(3)">← Back</button>
-        <button type="button" class="action" onclick="nextStep(3)">
-          Next →
-        </button>
-      </div>
-
-      <!-- STEP 4 -->
-      <div class="regStep hidden" id="regStep4">
-        <h3>Step 4: Review and Register</h3>
-
-        <div id="registrationSummary"></div>
-
-        <label>
-          <input id="acceptTerms" type="checkbox"
-            style="width:auto" required>
-          I have read the privacy notice and terms.
-        </label>
-
-        <p class="note">
-          Your records will be stored in this browser.
-          They will not automatically appear on another phone.
-        </p>
-
-        <button type="button" class="action secondary"
-          onclick="prevStep(4)">← Back</button>
-
-        <button type="submit" class="action">
-          Create Account
-        </button>
-      </div>
-
-    </form>
-    <p id="registerMessage"></p>
-  </div>
-</section>
-
-<!-- LOGIN -->
-<section id="login" class="page hidden">
-  <div class="card">
-    <h2>Member Login</h2>
-
-    <form id="loginForm">
-      <label for="loginPhone">Phone number</label>
-      <input id="loginPhone" required type="tel">
-
-      <label for="loginPassword">Password</label>
-      <div class="password-line">
-        <input id="loginPassword" type="password" required
-          autocomplete="current-password">
-        <label>
-          <input type="checkbox" style="width:auto;margin:0"
-            onchange="togglePassword('loginPassword',this)">
-          Show
-        </label>
-      </div>
-
-      <button class="action">Login</button>
-    </form>
-
-    <p id="loginMessage"></p>
-    <p>Don't have an account?
-      <a href="#" onclick="showPage('register');return false">Register here</a>
-    </p>
-  </div>
-</section>
-
-<!-- PAYMENT -->
-<section id="payment" class="page hidden">
-  <div class="card">
-    <h2>Registration Payment</h2>
-
-    <h3>MK 5,000</h3>
-    <p><strong>Payment method:</strong> Airtel Money Malawi</p>
-    <p><strong>Recipient:</strong> Precious Nyirenda</p>
-    <p><strong>Number:</strong> 0980418922</p>
-
-    <div class="note">
-      <strong>Before sending money</strong>
-      <p>Verify the recipient name and number on your payment screen.</p>
-      <p>Never share your Airtel Money PIN or one-time password.</p>
-      <p>Keep your transaction reference for verification.</p>
-    </div>
-
-    <button class="action secondary" onclick="copyNumber()">
-      Copy Payment Number
-    </button>
-
-    <form id="paymentForm">
-      <label for="paymentReference">Transaction reference</label>
-      <input id="paymentReference" required maxlength="100">
-
-      <label for="paymentAmount">Amount paid (MK)</label>
-      <input id="paymentAmount" type="number" min="1" required>
-
-      <button class="action">Submit for Review</button>
-    </form>
-
-    <p id="paymentMessage"></p>
-  </div>
-</section>
-
-<!-- MEMBER DASHBOARD -->
-<section id="dashboard" class="page hidden">
-  <div class="card">
-    <h2>My Dashboard</h2>
-    <p id="accountInfo">Please log in to continue.</p>
-    <div id="userStats"></div>
-
-    <button class="action" onclick="showPage('payment')">
-      Payment
-    </button>
-    <button class="action secondary" onclick="downloadMyData()">
-      Download My Records
-    </button>
-    <button class="action danger" onclick="logout()">
-      Logout
-    </button>
-  </div>
-
-  <div class="card">
-    <h2>Referral Information</h2>
-    <p>Your referral code: <strong id="myReferral">—</strong></p>
-    <p>Registered referrals: <strong id="myReferrals">0</strong></p>
-    <button class="action" onclick="copyReferral()">Copy Referral Code</button>
-  </div>
-</section>
-
-<!-- ADMIN -->
-<section id="admin" class="page hidden">
-  <div id="adminLoginBox" class="card">
-    <h2>Administrator Login</h2>
-
-    <form id="adminLoginForm">
-      <label for="adminPassword">Admin password</label>
-      <div class="password-line">
-        <input id="adminPassword" type="password" required
-          autocomplete="current-password">
-        <label>
-          <input type="checkbox" style="width:auto;margin:0"
-            onchange="togglePassword('adminPassword',this)">
-          Show
-        </label>
-      </div>
-      <button class="action">Open Admin Dashboard</button>
-    </form>
-
-    <p id="adminMessage"></p>
-
-    <p class="note">
-      Prototype warning: the admin password is stored in this HTML
-      file and can be discovered by inspecting the source.
-      Do not use this version for sensitive real payment records.
-    </p>
-  </div>
-
-  <div id="adminPanel" class="hidden">
-    <div class="card">
-      <h2>Administrator Dashboard</h2>
-
-      <div class="stat">Registrations<strong id="totalUsers">0</strong></div>
-      <div class="stat">Pending<strong id="pendingCount">0</strong></div>
-      <div class="stat">Approved<strong id="approvedCount">0</strong></div>
-      <div class="stat">Local Visits<strong id="adminVisits">0</strong></div>
-
-      <p class="note">
-        These figures cover only records in this browser.
-        They are not global or cross-device statistics.
-      </p>
-
-      <button class="action" onclick="exportCSV()">Export CSV</button>
-      <button class="action danger" onclick="adminLogout()">Close Admin</button>
-    </div>
-
-    <div class="card">
-      <h2>Registered Users</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Phone</th>
-              <th>Payment</th>
-              <th>Reference</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="usersTable"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <p>Make Money Online — local prototype</p>
-  <p>Records are saved in this browser only.</p>
-</footer>
-
-<script>
-/* ======================================================
-   CONFIGURATION
-   ====================================================== */
-
-// Demonstration password requested by the site owner.
-// This is NOT secure authentication for a real website.
-const ADMIN_PASSWORD = "Precious2009";
-
-const PAYMENT_NUMBER = "0980418922";
-
-const countries = [
- ["Algeria","+213"],["Angola","+244"],["Benin","+229"],
- ["Botswana","+267"],["Burkina Faso","+226"],["Burundi","+257"],
- ["Cabo Verde","+238"],["Cameroon","+237"],
- ["Central African Republic","+236"],["Chad","+235"],
- ["Comoros","+269"],["Republic of the Congo","+242"],
- ["Democratic Republic of the Congo","+243"],
- ["Côte d’Ivoire","+225"],["Djibouti","+253"],["Egypt","+20"],
- ["Equatorial Guinea","+240"],["Eritrea","+291"],["Eswatini","+268"],
- ["Ethiopia","+251"],["Gabon","+241"],["The Gambia","+220"],
- ["Ghana","+233"],["Guinea","+224"],["Guinea-Bissau","+245"],
- ["Kenya","+254"],["Lesotho","+266"],["Liberia","+231"],
- ["Libya","+218"],["Madagascar","+261"],["Malawi","+265"],
- ["Mali","+223"],["Mauritania","+222"],["Mauritius","+230"],
- ["Morocco","+212"],["Mozambique","+258"],["Namibia","+264"],
- ["Niger","+227"],["Nigeria","+234"],["Rwanda","+250"],
- ["São Tomé and Príncipe","+239"],["Senegal","+221"],
- ["Seychelles","+248"],["Sierra Leone","+232"],["Somalia","+252"],
- ["South Africa","+27"],["South Sudan","+211"],["Sudan","+249"],
- ["Tanzania","+255"],["Togo","+228"],["Tunisia","+216"],
- ["Uganda","+256"],["Zambia","+260"],["Zimbabwe","+263"]
-];
-
-const translations = {
- en:{
-  home:"Home",register:"Register",login:"Login",
-  payment:"Payment",dashboard:"Dashboard",admin:"Admin"
- },
- ny:{
-  home:"Kunyumba",register:"Lembetsani",login:"Lowani",
-  payment:"Malipiro",dashboard:"Dashboard",admin:"Admin"
- },
- sw:{
-  home:"Nyumbani",register:"Jisajili",login:"Ingia",
-  payment:"Malipo",dashboard:"Dashibodi",admin:"Msimamizi"
- },
- fr:{
-  home:"Accueil",register:"S'inscrire",login:"Connexion",
-  payment:"Paiement",dashboard:"Tableau de bord",admin:"Admin"
- },
- pt:{
-  home:"Início",register:"Registar",login:"Entrar",
-  payment:"Pagamento",dashboard:"Painel",admin:"Admin"
- },
- ar:{
-  home:"الرئيسية",register:"التسجيل",login:"تسجيل الدخول",
-  payment:"الدفع",dashboard:"لوحة التحكم",admin:"المشرف"
- },
- ha:{
-  home:"Gida",register:"Yi rajista",login:"Shiga",
-  payment:"Biya",dashboard:"Allon bayanai",admin:"Mai gudanarwa"
- },
- yo:{
-  home:"Ilé",register:"Forúkọ sílẹ̀",login:"Wọlé",
-  payment:"Ìsanwó",dashboard:"Pánẹ́lì",admin:"Alábójútó"
- },
- zu:{
-  home:"Ikhaya",register:"Bhalisa",login:"Ngena",
-  payment:"Inkokhelo",dashboard:"Ideshibhodi",admin:"Umlawuli"
- },
- am:{
-  home:"መነሻ",register:"ይመዝገቡ",login:"ግባ",
-  payment:"ክፍያ",dashboard:"ዳሽቦርድ",admin:"አስተዳዳሪ"
- }
-};
-
-function getUsers(){
- try{return JSON.parse(localStorage.getItem("mmo_users")||"[]")}
- catch(e){return []}
-}
-function saveUsers(users){
- localStorage.setItem("mmo_users",JSON.stringify(users));
-}
-function getSession(){
- return localStorage.getItem("mmo_session");
-}
-function setMessage(id,message,success=false){
- const el=document.getElementById(id);
- el.textContent=message;
- el.className=success?"success":"error";
-}
-function showPage(id){
- document.querySelectorAll(".page").forEach(el=>el.classList.add("hidden"));
- document.getElementById(id).classList.remove("hidden");
-
- if(id==="dashboard")renderDashboard();
-
- if(id==="admin"){
-  document.getElementById("adminLoginBox").classList.remove("hidden");
-  document.getElementById("adminPanel").classList.add("hidden");
- }
-}
-function togglePassword(id,checkbox){
- document.getElementById(id).type=checkbox.checked?"text":"password";
-}
-
-/* ======================================================
-   COUNTRY SELECTOR
-   ====================================================== */
-const countrySelect=document.getElementById("regCountry");
-
-countries.forEach(([name,code])=>{
- const option=document.createElement("option");
- option.value=code;
- option.textContent=name+" ("+code+")";
- if(name==="Malawi")option.selected=true;
- countrySelect.appendChild(option);
-});
-
-/* ======================================================
-   LOCAL VISIT COUNTER
-   ====================================================== */
-function updateVisits(){
- const count=Number(localStorage.getItem("mmo_visits")||"0")+1;
- localStorage.setItem("mmo_visits",String(count));
- document.getElementById("liveCount").textContent=count;
-}
-
-/* ======================================================
-   FOUR-STEP REGISTRATION
-   ====================================================== */
-let currentStep=1;
-
-function displayStep(n){
- currentStep=n;
-
- document.querySelectorAll(".regStep").forEach(el=>el.classList.add("hidden"));
- document.getElementById("regStep"+n).classList.remove("hidden");
-
- for(let i=1;i<=4;i++){
-  document.getElementById("stepLabel"+i).classList.toggle("active",i===n);
- }
-
- document.getElementById("progressBar").style.width=(n*25)+"%";
-
- if(n===4){
-  document.getElementById("registrationSummary").innerHTML=
-   "<p><b>Name:</b> "+escapeHTML(document.getElementById("regName").value)+"</p>"+
-   "<p><b>Username:</b> "+escapeHTML(document.getElementById("regUsername").value)+"</p>"+
-   "<p><b>Country:</b> "+escapeHTML(countrySelect.options[countrySelect.selectedIndex].text)+"</p>"+
-   "<p><b>Phone:</b> "+escapeHTML(document.getElementById("regPhone").value)+"</p>";
- }
-}
-
-function nextStep(step){
- const section=document.getElementById("regStep"+step);
- const fields=section.querySelectorAll("input,select");
-
- for(const field of fields){
-  if(field.type==="checkbox")continue;
-  if(!field.checkValidity()){
-   field.reportValidity();
-   return;
-  }
- }
-
- if(step===3){
-  const p1=document.getElementById("regPassword").value;
-  const p2=document.getElementById("regPassword2").value;
-
-  if(p1.length<8){
-   setMessage("registerMessage","Use at least 8 characters for your password.");
-   return;
-  }
-  if(p1!==p2){
-   setMessage("registerMessage","The passwords do not match.");
-   return;
-  }
- }
-
- setMessage("registerMessage","");
- displayStep(step+1);
-}
-function prevStep(step){
- displayStep(step-1);
-}
-
-function createId(){
- return "U"+Date.now().toString(36).toUpperCase()+
- Math.random().toString(36).slice(2,6).toUpperCase();
-}
-
-document.getElementById("registerForm").addEventListener("submit",function(e){
- e.preventDefault();
-
- if(!document.getElement
+<div class="card">
+<h2>Create Account</h2>
+
+<div class="steps">
+<div class="step active" id="label1">1. Details</div>
+<div class="step" id="label2">2. Country</div>
+<div class="step" id="label3">3. Password</div>
+<div class="step" id="label4">4. Confirm</div>
+</div>
+
+<form id="registerForm">
+
+<div id="step1">
+<label>Full name</label>
+<input id="regName" required maxlength="80" placeholder="Your full name">
+
+<label>Username</label>
+<input id="regUsername" required maxlength="30" placeholder="Choose username">
+
+<button type="button" class="action" onclick="nextStep(1)">Next →</button>
+</div>
+
+<div id="step2" class="hidden">
+<label>African country</label>
+<select id="regCountry" required></select>
+
+<label>Phone number</label>
+<input id="regPhone" type="tel" required placeholder="Phone number">
+
+<label>Referral code (optional)</label>
+<input id="regReferral" placeholder="Referral code">
+
+<button type="button" class="action blue" onclick="prevStep(2)">← Back</button>
+<button type="button" class="action" onclick="nextStep(2)">Next →</button>
+</div>
+
+<div id="step3" class="hidden">
+<label>Password (at least 8 characters)</label>
+<div class="password-row">
+<input id="regPassword" type="password" minlength="8" required autocomplete="new-password">
+<label><input type="checkbox" onchange="togglePassword('regPassword',this)"> Show</label>
+</div>
+
+<label>Confirm password</label>
+<div class="password-row">
+<input id="regPassword2" type="password" minlength="8" required autocomplete="new-password">
+<label><input type="checkbox" onchange="togglePassword('regPassword2',this)"> Show</label>
+</div>
+
+<button type="button" class="action blue" onclick="prevStep(3)">← Back</button>
+<button type="button" class="action" onclick="nextStep(3)">Next →</button>
+</div>
+
+<div id="step4" class="hidden">
+<h3>Confirm Your Details</h3>
+<div id="summary"></div>
+
+<label>
+<input id="acceptTerms" type="checkbox" required style="width:auto">
+I have read and accept the privacy notice and terms.
+</label>
+
+<p class="note">This
