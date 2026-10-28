@@ -2,1086 +2,376 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Make Money Online - Member Portal</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Make Money Online</title>
 <style>
-:root {
-  --bg:#060b1d;
-  --panel:#111d39;
-  --line:#263b66;
-  --text:#ffffff;
-  --muted:#a9bad8;
-  --green:#2af59e;
-  --blue:#7fb0ff;
-  --gold:#ffcc66;
-  --red:#ff8585;
-}
-* {box-sizing:border-box}
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Arial,system-ui,sans-serif;
-  min-height:100vh;
-}
-.top {
-  position:sticky;
-  top:0;
-  z-index:5;
-  background:#0c1735;
-  border-bottom:1px solid var(--line);
-  padding:13px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-}
-.logo {font-weight:900;font-size:19px}
-.logo small {
-  display:block;
-  color:var(--blue);
-  font-size:10px;
-  letter-spacing:1.5px;
-}
-.badge {
-  font-size:11px;
-  background:#12264a;
-  color:var(--green);
-  padding:6px 9px;
-  border:1px solid var(--line);
-  border-radius:20px;
-}
-.card {
-  max-width:560px;
-  margin:14px auto;
-  padding:16px;
-  background:linear-gradient(180deg,#121e3b,#0e1832);
-  border:1px solid var(--line);
-  border-radius:16px;
-  box-shadow:0 8px 24px #0005;
-}
-h2 {font-size:22px;margin:0 0 10px}
-h3 {font-size:16px;margin:12px 0}
-.muted,.small {
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.6;
-}
-.label {
-  display:block;
-  margin:12px 0 5px;
-  color:var(--muted);
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-.input,select,textarea {
-  width:100%;
-  background:#0a1330;
-  border:1px solid #2a4370;
-  color:#fff;
-  padding:12px;
-  border-radius:10px;
-  font-size:14px;
-}
-.row {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-}
-.btn {
-  display:block;
-  width:100%;
-  padding:13px;
-  margin-top:12px;
-  border:0;
-  border-radius:10px;
-  background:linear-gradient(90deg,#3b82f6,#2af59e);
-  color:#06101c;
-  font-size:14px;
-  font-weight:900;
-  cursor:pointer;
-}
-.btn2 {
-  padding:10px;
-  border:1px solid var(--line);
-  border-radius:9px;
-  background:#1a274a;
-  color:#fff;
-  cursor:pointer;
-}
-.btn-danger {
-  background:#421d27;
-  border-color:#7a2a3a;
-}
-.hidden {display:none!important}
-.box {
-  padding:12px;
-  margin-top:12px;
-  background:#0a1330;
-  border:1px solid var(--line);
-  border-radius:11px;
-}
-.greenbox {
-  border-color:#1f7a4a;
-  background:#0b2b20;
-}
-.stats {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:8px;
-  margin-top:10px;
-}
-.stat {
-  background:#0a1330;
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:10px;
-  text-align:center;
-}
-.stat b {
-  font-size:19px;
-  color:var(--green);
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:8px;
-  margin-top:10px;
-}
-.feature {
-  padding:11px;
-  background:#0c1430;
-  border:1px solid var(--line);
-  border-radius:10px;
-  font-size:12px;
-}
-.nav {
-  display:flex;
-  gap:7px;
-  flex-wrap:wrap;
-  margin-top:12px;
-}
-.nav button {flex:1;min-width:100px}
-.tablewrap {overflow:auto}
-table {
-  width:100%;
-  border-collapse:collapse;
-  font-size:12px;
-  margin-top:10px;
-}
-td,th {
-  text-align:left;
-  padding:8px;
-  border-bottom:1px solid var(--line);
-  vertical-align:top;
-}
-.good {color:var(--green)}
-.pending {color:var(--gold)}
-a {color:var(--blue)}
-details {
-  padding:10px;
-  background:#0a1330;
-  border:1px solid var(--line);
-  border-radius:9px;
-  margin-top:7px;
-}
-footer {
-  text-align:center;
-  color:var(--muted);
-  font-size:11px;
-  padding:20px;
-}
-@media(min-width:700px) {
-  .stats {grid-template-columns:repeat(4,1fr)}
-  .grid {grid-template-columns:repeat(3,1fr)}
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
+header{background:#075e45;color:white;padding:18px;text-align:center}
+header h1{margin:0;font-size:25px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;background:#064e3b}
+nav button{background:transparent;color:white;border:0;padding:13px;cursor:pointer}
+nav button:hover{background:#087653}
+main{max-width:950px;margin:20px auto;padding:12px}
+.card{background:white;padding:20px;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 9px #0001}
+h2{margin-top:0;color:#075e45}
+input,select{width:100%;padding:12px;margin:7px 0 13px;border:1px solid #cbd5e1;border-radius:7px}
+button.action{background:#087653;color:white;border:0;border-radius:7px;padding:12px 16px;cursor:pointer;margin:4px 0}
+button.danger{background:#b91c1c}
+button:disabled{opacity:.5}
+.stat{display:inline-block;background:#ecfdf5;padding:14px;border-radius:8px;margin:4px;min-width:135px}
+.stat strong{display:block;font-size:22px;margin-top:5px}
+.hidden{display:none!important}
+.note{background:#fffbeb;padding:12px;border-radius:8px;color:#854d0e}
+.success{color:#047857}.error{color:#b91c1c}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:9px;border-bottom:1px solid #e2e8f0;text-align:left}
+.table-wrap{overflow-x:auto}
+footer{text-align:center;padding:20px;color:#64748b}
 </style>
 </head>
-
 <body>
 
-<header class="top">
-  <div class="logo">
-    MAKE MONEY ONLINE
-    <small>MEMBER PORTAL • MALAWI</small>
-  </div>
-  <div class="badge">DEMO VERSION</div>
+<header>
+  <h1>Make Money Online</h1>
+  <p>Registration, referrals and payment tracking</p>
+  <div>🟢 Visitors recorded on this browser: <b id="visitorCount">0</b></div>
 </header>
 
+<nav>
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('register')">Register</button>
+  <button onclick="showPage('login')">Login</button>
+  <button onclick="showPage('payment')">Payment</button>
+  <button onclick="showPage('dashboard')">My Dashboard</button>
+  <button onclick="showPage('admin')">Admin</button>
+</nav>
+
 <main>
-
-<!-- FEATURE 1: REGISTRATION -->
-<section id="registerPage" class="card">
-
-<h2>Start Here</h2>
-
-<p class="muted">
-Create a member profile, manage your referral link, and submit
-a transaction reference for manual review. Income is not guaranteed.
-</p>
-
-<!-- FEATURE 2: FEATURE OVERVIEW -->
-<div class="grid">
-  <div class="feature">👤 <b>Member Profiles</b><br>Registration records</div>
-  <div class="feature">📊 <b>Dashboard</b><br>Account status</div>
-  <div class="feature">💳 <b>Payment Records</b><br>Manual review</div>
-  <div class="feature">🔗 <b>Referral System</b><br>Personal links</div>
-  <div class="feature">🌍 <b>Country Selector</b><br>International numbers</div>
-  <div class="feature">🔐 <b>Privacy Notice</b><br>Consent required</div>
-  <div class="feature">📈 <b>Statistics</b><br>Local records</div>
-  <div class="feature">📤 <b>Data Export</b><br>CSV files</div>
-  <div class="feature">📱 <b>WhatsApp Sharing</b><br>Share your link</div>
-  <div class="feature">🛡️ <b>Admin Panel</b><br>Demo PIN</div>
-  <div class="feature">🧾 <b>Transaction IDs</b><br>Payment references</div>
-  <div class="feature">❓ <b>Help Centre</b><br>Frequently asked questions</div>
-</div>
-
-<label class="label">Full Name</label>
-<input id="fullname" class="input" placeholder="Enter your full name">
-
-<label class="label">Username</label>
-<input id="username" class="input" placeholder="Choose a username">
-
-<label class="label">Country</label>
-
-<div class="row">
-<select id="countryCode">
-<option value="+265" data-country="Malawi">🇲🇼 Malawi +265</option>
-<option value="+260" data-country="Zambia">🇿🇲 Zambia +260</option>
-<option value="+255" data-country="Tanzania">🇹🇿 Tanzania +255</option>
-<option value="+256" data-country="Uganda">🇺🇬 Uganda +256</option>
-<option value="+254" data-country="Kenya">🇰🇪 Kenya +254</option>
-<option value="+27" data-country="South Africa">🇿🇦 South Africa +27</option>
-<option value="+263" data-country="Zimbabwe">🇿🇼 Zimbabwe +263</option>
-<option value="+234" data-country="Nigeria">🇳🇬 Nigeria +234</option>
-<option value="+233" data-country="Ghana">🇬🇭 Ghana +233</option>
-<option value="+1" data-country="USA/Canada">🇺🇸 USA/Canada +1</option>
-<option value="+44" data-country="United Kingdom">🇬🇧 UK +44</option>
-<option value="+91" data-country="India">🇮🇳 India +91</option>
-</select>
-
-<input id="phone" class="input" inputmode="tel"
-placeholder="Phone number">
-</div>
-
-<p class="small">
-Full number: <b id="phonePreview">+265</b>
-</p>
-
-<label class="label">Password (demo only)</label>
-<input id="password" type="password" class="input"
-placeholder="At least 8 characters">
-
-<p class="small">
-This demonstration does not securely authenticate accounts.
-Do not use a password you use on other websites.
-</p>
-
-<label class="label">Referral Username (optional)</label>
-<input id="sponsor" class="input" placeholder="Who referred you?">
-
-<!-- FEATURE 3: PRIVACY AND AGREEMENT -->
-<label class="label">Privacy Notice and User Agreement</label>
-
-<div class="box small">
-<b>Important information</b><br><br>
-
-1. Your name, username, phone number, country, referral information,
-and payment reference may be stored in this browser.<br><br>
-
-2. Your records are not automatically sent to an administrator or
-synchronized across devices.<br><br>
-
-3. Browser data can be lost or accessed by someone using this device.<br><br>
-
-4. This prototype does not provide secure cloud storage, real
-authentication, automatic payment verification, or guaranteed backups.<br><br>
-
-5. Never enter your mobile-money PIN, banking password, or other
-secret credentials into this website.<br><br>
-
-6. Referral links do not guarantee income. Check the business model
-and all terms before sending money.<br><br>
-
-7. Accepting this notice records your choice in this browser.
-It does not establish legal compliance.
-</div>
-
-<label style="display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:12px">
-<input type="checkbox" id="agree" style="margin-top:3px">
-I have read and accepted the privacy notice and understand this is a demo.
-</label>
-
-<button class="btn" onclick="registerMember()">
-CREATE ACCOUNT
-</button>
-
-<button class="btn2" style="width:100%;margin-top:10px"
-onclick="openAdmin()">
-🔐 Administrator Dashboard
-</button>
-
-<p class="small">
-Payment information: verify the recipient, amount, and service terms
-independently before sending any money.
-</p>
-
+<section id="home" class="page">
+  <div class="card">
+    <h2>Welcome</h2>
+    <p>Create an account and submit your registration payment for review.</p>
+    <p class="note">Registration fee: <b>MK 5,000</b>. Payment must be verified before an account is marked as paid. Registration does not guarantee earnings.</p>
+    <button class="action" onclick="showPage('register')">Create Account</button>
+  </div>
+  <div class="card">
+    <h2>How it works</h2>
+    <ol>
+      <li>Register with your details.</li>
+      <li>Read the payment instructions.</li>
+      <li>Submit your payment reference for review.</li>
+      <li>Check your account for the review status.</li>
+    </ol>
+  </div>
 </section>
 
-
-<!-- FEATURE 4: PAYMENT RECORDS -->
-<section id="paymentPage" class="card hidden">
-
-<h2>Payment Records</h2>
-
-<p class="muted">
-Submit a transaction reference only if you have made a payment.
-Submitting a reference does not prove that money was received.
-</p>
-
-<div class="box greenbox">
-<b>Payment details supplied for this website</b>
-<p style="margin-top:8px;line-height:1.8">
-Name: <b>Precious Nyirenda</b><br>
-Number: <b>0980418922</b><br>
-Proposed amount: <b>K5,000 MWK</b>
-</p>
-
-<p class="small">
-Verify the displayed recipient name using your payment provider.
-This website cannot verify that the recipient or offer is legitimate.
-</p>
-</div>
-
-<label class="label">Transaction Reference</label>
-<input id="transactionId" class="input"
-placeholder="Reference from your receipt">
-
-<label class="label">Payment Method</label>
-<select id="paymentMethod" class="input">
-<option>Airtel Money</option>
-<option>TNM Mpamba</option>
-<option>Bank Transfer</option>
-<option>Other</option>
-</select>
-
-<button class="btn" onclick="submitPayment()">
-SUBMIT FOR MANUAL REVIEW
-</button>
-
-<button class="btn2" style="width:100%;margin-top:8px"
-onclick="showPage('dashboardPage')">
-Back to Dashboard
-</button>
-
-<a style="display:block;margin-top:12px"
-href="https://wa.me/265980418922">
-Contact WhatsApp
-</a>
-
+<section id="register" class="page hidden">
+  <div class="card">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <label>Full name</label><input id="regName" required maxlength="80">
+      <label>Phone number</label><input id="regPhone" required type="tel" maxlength="25">
+      <label>Create a password</label><input id="regPassword" required type="password" minlength="8" autocomplete="new-password">
+      <label>Referral code (optional)</label><input id="regReferral" maxlength="30">
+      <p class="note">Prototype notice: account information is stored in this browser. Do not use a password you use elsewhere.</p>
+      <button class="action">Register</button>
+    </form>
+    <p id="registerMessage"></p>
+  </div>
 </section>
 
-
-<!-- FEATURE 5: MEMBER DASHBOARD -->
-<section id="dashboardPage" class="card hidden">
-
-<h2>My Dashboard</h2>
-
-<p class="muted">
-Your information is saved only in this browser.
-</p>
-
-<div class="box">
-<p>Full Name: <b id="dashName">—</b></p>
-<p>Username: <b id="dashUsername">—</b></p>
-<p>Phone: <span id="dashPhone">—</span></p>
-<p>Account Status: <b id="dashStatus" class="pending">Registered</b></p>
-<p>Payment Status: <span id="dashPayment">Not submitted</span></p>
-</div>
-
-<h3>Your Referral Link</h3>
-
-<div id="refLink" class="box"
-style="overflow-wrap:anywhere;color:var(--green)">
-Your referral link will appear here.
-</div>
-
-<div class="row">
-<button class="btn2" onclick="copyReferral()">📋 Copy Link</button>
-<button class="btn2" onclick="shareReferral()">💬 WhatsApp Share</button>
-</div>
-
-<!-- FEATURE 6: MEMBER STATISTICS -->
-<div class="stats">
-
-<div class="stat">
-<span class="small">Recorded Referrals</span><br>
-<b id="refCount">0</b>
-</div>
-
-<div class="stat">
-<span class="small">Payment Status</span><br>
-<b id="payStat" style="font-size:14px">Pending</b>
-</div>
-
-<div class="stat">
-<span class="small">Guaranteed Income</span><br>
-<b style="font-size:14px">None</b>
-</div>
-
-<div class="stat">
-<span class="small">Storage</span><br>
-<b style="font-size:14px">Local</b>
-</div>
-
-</div>
-
-<div class="nav">
-<button class="btn2" onclick="showPage('paymentPage')">
-💳 Payment Reference
-</button>
-
-<button class="btn2" onclick="downloadMyData()">
-📥 Download My Data
-</button>
-
-<button class="btn2" onclick="logoutDemo()">
-Log Out
-</button>
-</div>
-
+<section id="login" class="page hidden">
+  <div class="card">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label>Phone number</label><input id="loginPhone" required type="tel">
+      <label>Password</label><input id="loginPassword" required type="password" autocomplete="current-password">
+      <button class="action">Login</button>
+    </form>
+    <p id="loginMessage"></p>
+  </div>
 </section>
 
-
-<!-- FEATURE 7: ADMIN DASHBOARD -->
-<section id="adminPage" class="card hidden">
-
-<h2>Administrator Dashboard</h2>
-
-<p class="muted">
-This is a local demonstration, not a secure administrator system.
-The demo PIN is visible in the JavaScript source and must not protect
-real customer or payment records.
-</p>
-
-<label class="label">Demo Admin PIN</label>
-<input id="adminPin" type="password" class="input"
-placeholder="Enter demo PIN">
-
-<button class="btn" onclick="unlockAdmin()">
-OPEN ADMIN DASHBOARD
-</button>
-
-<div id="adminContent" class="hidden">
-
-<!-- FEATURE 8: MEMBER ANALYTICS -->
-<div class="stats">
-
-<div class="stat">
-<span class="small">Registrations</span><br>
-<b id="totalMembers">0</b>
-</div>
-
-<div class="stat">
-<span class="small">Pending Payments</span><br>
-<b id="pendingPayments">0</b>
-</div>
-
-<div class="stat">
-<span class="small">Approved Records</span><br>
-<b id="approvedMembers">0</b>
-</div>
-
-<div class="stat">
-<span class="small">Recorded Amount*</span><br>
-<b id="recordedAmount">K0</b>
-</div>
-
-</div>
-
-<p class="small">
-*This is a calculation from local records marked as verified.
-It is not a bank balance or independently verified income.
-</p>
-
-<!-- FEATURE 9: EXPORT RECORDS -->
-<div class="nav">
-<button class="btn2" onclick="exportUsers()">
-📤 Export Members CSV
-</button>
-
-<button class="btn2" onclick="exportVisits()">
-📊 Export Visit Log
-</button>
-
-<button class="btn2 btn-danger" onclick="clearLocalData()">
-🗑️ Clear Local Data
-</button>
-</div>
-
-<!-- FEATURE 10: MEMBER MANAGEMENT -->
-<h3>Member Records</h3>
-
-<div class="tablewrap">
-<table>
-<thead>
-<tr>
-<th>Member</th>
-<th>Phone</th>
-<th>Payment</th>
-<th>Actions</th>
-</tr>
-</thead>
-<tbody id="memberRows"></tbody>
-</table>
-</div>
-
-</div>
-
-<button class="btn2" style="width:100%;margin-top:12px"
-onclick="showPage('registerPage')">
-Back to Registration
-</button>
-
+<section id="payment" class="page hidden">
+  <div class="card">
+    <h2>Registration Payment</h2>
+    <p>Registration fee: <strong>MK 5,000</strong></p>
+    <p>Payment recipient: <strong>Precious Nyirenda</strong></p>
+    <p>Payment number: <strong>0980418922</strong></p>
+    <p class="note">Confirm the recipient and number before sending money. Keep your transaction reference. Never share your PIN.</p>
+    <form id="paymentForm">
+      <label>Transaction reference</label>
+      <input id="paymentReference" required maxlength="100">
+      <label>Amount paid (MK)</label>
+      <input id="paymentAmount" type="number" min="1" required>
+      <button class="action">Submit for Review</button>
+    </form>
+    <p id="paymentMessage"></p>
+  </div>
 </section>
 
-
-<!-- FEATURE 11: FAQ -->
-<section class="card">
-
-<h2>Help Centre / FAQ</h2>
-
-<details>
-<summary>Does registration prove payment?</summary>
-<p class="small">
-No. The administrator must independently verify the transaction
-using the payment provider before approving a record.
-</p>
-</details>
-
-<details>
-<summary>Will I definitely earn money?</summary>
-<p class="small">
-No. This prototype cannot promise earnings, jobs, withdrawals,
-or referral rewards.
-</p>
-</details>
-
-<details>
-<summary>Are records stored online?</summary>
-<p class="small">
-No. This version stores data in the current browser. It does not
-automatically send your records to an administrator.
-</p>
-</details>
-
-<details>
-<summary>Can I download my records?</summary>
-<p class="small">
-Yes. The dashboard offers a download of your member information.
-The administrator can also export local records as CSV files.
-</p>
-</details>
-
-<details>
-<summary>Is the administrator PIN secure?</summary>
-<p class="small">
-No. The PIN is for demonstration only. A real website requires
-server-side authentication and access controls.
-</p>
-</details>
-
+<section id="dashboard" class="page hidden">
+  <div class="card">
+    <h2>My Dashboard</h2>
+    <p id="accountInfo">Please log in to view your dashboard.</p>
+    <div id="userStats"></div>
+    <button class="action" onclick="showPage('payment')">Submit Payment</button>
+    <button class="action" onclick="logout()">Logout</button>
+  </div>
+  <div class="card">
+    <h2>Referral Information</h2>
+    <p>Your referral code: <b id="myReferral">—</b></p>
+    <p>People registered using your code: <b id="myReferrals">0</b></p>
+  </div>
 </section>
 
+<section id="admin" class="page hidden">
+  <div class="card" id="adminLoginBox">
+    <h2>Administrator Login</h2>
+    <p class="note">This local demo is not secure for real users or payments. A password embedded in HTML can be discovered by inspecting the source.</p>
+    <form id="adminLoginForm">
+      <label>Admin password</label>
+      <input id="adminPassword" type="password" required autocomplete="current-password">
+      <button class="action">Open Admin Dashboard</button>
+    </form>
+    <p id="adminMessage"></p>
+  </div>
+
+  <div id="adminPanel" class="hidden">
+    <div class="card">
+      <h2>Admin Dashboard</h2>
+      <div class="stat">Registrations<strong id="totalUsers">0</strong></div>
+      <div class="stat">Pending payments<strong id="pendingCount">0</strong></div>
+      <div class="stat">Approved payments<strong id="approvedCount">0</strong></div>
+      <div class="stat">Recorded visits<strong id="adminVisits">0</strong></div>
+      <p class="note">Only accounts stored in this browser appear here. Approval is a manual record; verify the transaction independently before approving.</p>
+      <button class="action" onclick="exportCSV()">Export CSV</button>
+      <button class="action danger" onclick="adminLogout()">Close Admin</button>
+    </div>
+    <div class="card">
+      <h2>Registered Users</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Phone</th><th>Referral</th><th>Payment</th><th>Action</th></tr></thead>
+          <tbody id="usersTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
-Make Money Online • Member Portal • Demo Version<br>
-No real payment processing or guaranteed earnings.
+  <p>Make Money Online — prototype</p>
+  <p>Records are stored locally on this browser and may be lost if browser data is cleared.</p>
 </footer>
 
-
 <script>
-"use strict";
+/*
+  LOCAL DEMO ONLY.
+  The admin password is a demonstration password, not secure authentication.
+  Never use this file alone to store real passwords or sensitive payment data.
+*/
+const DEMO_ADMIN_PASSWORD = "ChangeThisAdminPassword";
 
-/* FEATURE 12: LOCAL DATA STORAGE */
-const STORAGE_USERS = "mmo_demo_users_v2";
-const STORAGE_VISITS = "mmo_demo_visits_v2";
+const getUsers = () => {
+  try { return JSON.parse(localStorage.getItem("mmo_users") || "[]"); }
+  catch { return []; }
+};
+const saveUsers = users => localStorage.setItem("mmo_users", JSON.stringify(users));
+const getSession = () => localStorage.getItem("mmo_session");
+const setMessage = (id, text, ok=false) => {
+  const el = document.getElementById(id);
+  el.textContent = text;
+  el.className = ok ? "success" : "error";
+};
+const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
 
-function readJSON(key, fallback) {
-  try {
-    return JSON.parse(localStorage.getItem(key) || "null") || fallback;
-  } catch (error) {
-    return fallback;
+function showPage(page) {
+  document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
+  document.getElementById(page).classList.remove("hidden");
+  if (page === "dashboard") renderDashboard();
+  if (page === "admin") {
+    document.getElementById("adminLoginBox").classList.remove("hidden");
+    document.getElementById("adminPanel").classList.add("hidden");
   }
 }
-
-let users = readJSON(STORAGE_USERS, []);
-let visits = readJSON(STORAGE_VISITS, []);
-
-let currentUsername = localStorage.getItem("mmo_demo_current") || "";
-
-const params = new URLSearchParams(location.search);
-const incomingRef = params.get("ref") || "";
-
-if (incomingRef) {
-  document.getElementById("sponsor").value = incomingRef;
+function updateVisits() {
+  // Counts visits only on this browser, not real-time visitors across the internet.
+  const count = Number(localStorage.getItem("mmo_visits") || "0") + 1;
+  localStorage.setItem("mmo_visits", String(count));
+  document.getElementById("visitorCount").textContent = count;
+}
+function newId() {
+  return "U" + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2,6).toUpperCase();
 }
 
-function saveUsers() {
-  localStorage.setItem(STORAGE_USERS, JSON.stringify(users));
-}
+document.getElementById("registerForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = document.getElementById("regName").value.trim();
+  const phone = document.getElementById("regPhone").value.trim();
+  const password = document.getElementById("regPassword").value;
+  const referral = document.getElementById("regReferral").value.trim();
+  const users = getUsers();
 
-function saveVisits() {
-  localStorage.setItem(STORAGE_VISITS, JSON.stringify(visits));
-}
-
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, character => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[character]));
-}
-
-
-/* FEATURE 13: PAGE NAVIGATION */
-function showPage(id) {
-  [
-    "registerPage",
-    "paymentPage",
-    "dashboardPage",
-    "adminPage"
-  ].forEach(page => {
-    document.getElementById(page).classList.add("hidden");
-  });
-
-  document.getElementById(id).classList.remove("hidden");
-
-  window.scrollTo(0, 0);
-
-  if (id === "dashboardPage") renderDashboard();
-}
-
-
-/* FEATURE 14: VISIT LOGGING */
-function logVisit() {
-  visits.unshift({
-    time: new Date().toLocaleString(),
-    ref: incomingRef || "Direct"
-  });
-
-  visits = visits.slice(0, 500);
-  saveVisits();
-}
-
-
-/* FEATURE 15: COUNTRY AND PHONE PREVIEW */
-const countryCode = document.getElementById("countryCode");
-const phoneInput = document.getElementById("phone");
-
-countryCode.addEventListener("change", updatePhone);
-phoneInput.addEventListener("input", updatePhone);
-
-function updatePhone() {
-  document.getElementById("phonePreview").textContent =
-    countryCode.value + " " + phoneInput.value.trim();
-}
-
-
-/* FEATURE 16: REGISTRATION AND VALIDATION */
-function registerMember() {
-  const fullname = document.getElementById("fullname").value.trim();
-
-  const username = document.getElementById("username")
-    .value.trim().replace(/^@/, "");
-
-  const phone = phoneInput.value.trim().replace(/\s+/g, "");
-
-  const password = document.getElementById("password").value;
-
-  const code = countryCode.value;
-
-  const country = countryCode.selectedOptions[0].dataset.country;
-
-  const sponsor = document.getElementById("sponsor").value.trim();
-
-  if (!fullname || !username || !phone) {
-    alert("Please enter your full name, username, and phone number.");
+  if (users.some(u => u.phone === phone)) {
+    setMessage("registerMessage", "This phone number is already registered.");
     return;
   }
-
-  if (!/^[a-zA-Z0-9_.-]{3,24}$/.test(username)) {
-    alert("Username must be 3–24 characters using letters, numbers, dots, underscores, or hyphens.");
-    return;
-  }
-
-  if (users.some(user =>
-    user.username.toLowerCase() === username.toLowerCase()
-  )) {
-    alert("This username already exists in the local records.");
-    return;
-  }
-
-  if (!/^[0-9]{6,15}$/.test(phone)) {
-    alert("Enter a phone number containing 6–15 digits.");
-    return;
-  }
-
   if (password.length < 8) {
-    alert("For this demo, enter at least 8 characters.");
+    setMessage("registerMessage", "Use a password with at least 8 characters.");
     return;
   }
 
-  if (!document.getElementById("agree").checked) {
-    alert("Please read and accept the privacy notice.");
-    return;
-  }
-
-  const member = {
-    id: Date.now(),
-    fullname,
-    username,
-    phone: code + phone,
-    code,
-    country,
-    sponsor,
-    created: new Date().toISOString(),
-    status: "registered",
-    paymentStatus: "not submitted",
-    transactionId: "",
-    paymentMethod: "",
-    approved: false
-  };
-
-  users.unshift(member);
-  saveUsers();
-
-  currentUsername = username;
-
-  localStorage.setItem("mmo_demo_current", username);
-
-  /*
-    The password is deliberately not stored.
-    This is a local prototype, not real authentication.
-  */
-
-  showPage("dashboardPage");
-
-  alert(
-    "Demo account created. No payment has been verified. " +
-    "Income is not guaranteed."
-  );
-}
-
-
-/* FEATURE 17: MEMBER DASHBOARD */
-function currentUser() {
-  return users.find(user => user.username === currentUsername);
-}
-
-function renderDashboard() {
-  const user = currentUser();
-
-  if (!user) {
-    showPage("registerPage");
-    return;
-  }
-
-  document.getElementById("dashName").textContent = user.fullname;
-
-  document.getElementById("dashUsername").textContent =
-    "@" + user.username;
-
-  document.getElementById("dashPhone").textContent = user.phone;
-
-  const status = document.getElementById("dashStatus");
-
-  status.textContent = user.status;
-
-  status.className = user.approved ? "good" : "pending";
-
-  document.getElementById("dashPayment").textContent =
-    user.paymentStatus +
-    (user.transactionId ? " — " + user.transactionId : "");
-
-  document.getElementById("payStat").textContent = user.paymentStatus;
-
-  /* FEATURE 18: PERSONAL REFERRAL LINK */
-  const link =
-    location.origin +
-    location.pathname +
-    "?ref=" +
-    encodeURIComponent(user.username);
-
-  document.getElementById("refLink").textContent = link;
-
-  /* FEATURE 19: REFERRAL COUNTER */
-  document.getElementById("refCount").textContent =
-    users.filter(member =>
-      String(member.sponsor || "").toLowerCase() ===
-      user.username.toLowerCase()
-    ).length;
-}
-
-
-/* FEATURE 20: PAYMENT REFERENCE SUBMISSION */
-function submitPayment() {
-  const user = currentUser();
-
-  if (!user) {
-    alert("Create a demo account first.");
-    showPage("registerPage");
-    return;
-  }
-
-  const transactionId =
-    document.getElementById("transactionId").value.trim();
-
-  if (!transactionId) {
-    alert("Enter a transaction reference.");
-    return;
-  }
-
-  user.transactionId = transactionId;
-
-  user.paymentMethod =
-    document.getElementById("paymentMethod").value;
-
-  user.paymentStatus = "pending manual review";
-
-  user.status = "pending review";
-
-  saveUsers();
-
-  alert(
-    "Reference saved locally. This website has not verified " +
-    "the payment or notified an administrator."
-  );
-
-  showPage("dashboardPage");
-}
-
-
-/* FEATURE 21: COPY REFERRAL LINK */
-async function copyReferral() {
-  const link = document.getElementById("refLink").textContent;
-
-  try {
-    await navigator.clipboard.writeText(link);
-    alert("Referral link copied.");
-  } catch (error) {
-    prompt("Copy your referral link:", link);
-  }
-}
-
-
-/* FEATURE 22: WHATSAPP SHARING */
-function shareReferral() {
-  const user = currentUser();
-
-  if (!user) return;
-
-  const link = document.getElementById("refLink").textContent;
-
-  const message =
-    "Here is my member referral link: " + link +
-    ". Please read the terms carefully. Income is not guaranteed.";
-
-  window.open(
-    "https://wa.me/?text=" + encodeURIComponent(message),
-    "_blank"
-  );
-}
-
-
-/* FEATURE 23: DOWNLOAD PERSONAL DATA */
-function downloadBlob(filename, content, type) {
-  const blob = new Blob([content], {type});
-
-  const url = URL.createObjectURL(blob);
-
-  const anchor = document.createElement("a");
-
-  anchor.href = url;
-  anchor.download = filename;
-
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-function downloadMyData() {
-  const user = currentUser();
-
-  if (!user) return;
-
-  downloadBlob(
-    "my-demo-account.json",
-    JSON.stringify(user, null, 2),
-    "application/json"
-  );
-}
-
-
-/* FEATURE 24: LOGOUT */
-function logoutDemo() {
-  currentUsername = "";
-
-  localStorage.removeItem("mmo_demo_current");
-
-  showPage("registerPage");
-}
-
-
-/* FEATURE 25: DEMONSTRATION ADMIN PANEL */
-function openAdmin() {
-  showPage("adminPage");
-}
-
-function unlockAdmin() {
-  /*
-    Demo PIN only.
-    Anyone inspecting this HTML can discover the PIN.
-    Do not use this for real security.
-  */
-
-  if (document.getElementById("adminPin").value !== "2468") {
-    alert("Incorrect demo PIN.");
-    return;
-  }
-
-  document.getElementById("adminContent").classList.remove("hidden");
-
-  renderAdmin();
-}
-
-
-/* FEATURE 26: ADMIN ANALYTICS AND MEMBER MANAGEMENT */
-function renderAdmin() {
-  document.getElementById("totalMembers").textContent = users.length;
-
-  document.getElementById("pendingPayments").textContent =
-    users.filter(user =>
-      user.paymentStatus === "pending manual review"
-    ).length;
-
-  document.getElementById("approvedMembers").textContent =
-    users.filter(user => user.approved).length;
-
-  document.getElementById("recordedAmount").textContent =
-    "K" +
-    (users.filter(user => user.approved).length * 5000)
-      .toLocaleString();
-
-  const rows = document.getElementById("memberRows");
-
-  rows.replaceChildren();
-
-  if (users.length === 0) {
-    rows.innerHTML =
-      '<tr><td colspan="4">No local registrations yet.</td></tr>';
-    return;
-  }
-
-  users.forEach(user => {
-    const tr = document.createElement("tr");
-
-    tr.innerHTML =
-      "<td><b>" + escapeHTML(user.fullname) + "</b><br>" +
-      "@" + escapeHTML(user.username) + "<br>" +
-      '<span class="small">' + escapeHTML(user.country) + "</span></td>" +
-
-      "<td>" + escapeHTML(user.phone) + "</td>" +
-
-      "<td>" + escapeHTML(user.transactionId || "No reference") +
-      "<br><span class='" +
-      (user.approved ? "good" : "pending") + "'>" +
-      escapeHTML(user.paymentStatus) + "</span></td>" +
-
-      '<td><button class="btn2" data-action="approve" data-id="' +
-      user.id + '">Mark verified</button> ' +
-
-      '<button class="btn2 btn-danger" data-action="delete" data-id="' +
-      user.id + '">Delete</button></td>';
-
-    rows.appendChild(tr);
+  // Demo-only storage. Passwords are NOT safe to store this way in a real website.
+  users.push({
+    id:newId(), name, phone, password, referral,
+    paymentStatus:"Not submitted", amount:0, paymentReference:"",
+    createdAt:new Date().toISOString()
   });
-}
-
-
-/* FEATURE 27: MANUAL ADMIN APPROVAL OR DELETION */
-document.getElementById("memberRows").addEventListener("click", event => {
-  const button = event.target.closest("button");
-
-  if (!button) return;
-
-  const user = users.find(
-    item => item.id === Number(button.dataset.id)
-  );
-
-  if (!user) return;
-
-  if (button.dataset.action === "approve") {
-    if (!user.transactionId) {
-      alert("No transaction reference was entered.");
-      return;
-    }
-
-    if (!confirm(
-      "Have you independently verified this transaction " +
-      "with the payment provider?"
-    )) {
-      return;
-    }
-
-    user.approved = true;
-
-    user.paymentStatus = "marked verified by local admin";
-
-    user.status = "active (local demo)";
-
-    saveUsers();
-
-    renderAdmin();
-
-    if (currentUsername === user.username) {
-      renderDashboard();
-    }
-
-  } else if (
-    button.dataset.action === "delete" &&
-    confirm("Delete this local member record?")
-  ) {
-    users = users.filter(item => item.id !== user.id);
-
-    saveUsers();
-
-    renderAdmin();
-
-    if (currentUsername === user.username) {
-      logoutDemo();
-    }
-  }
+  saveUsers(users);
+  setMessage("registerMessage", "Account created on this browser. You can now log in.", true);
+  e.target.reset();
 });
 
+document.getElementById("loginForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const phone = document.getElementById("loginPhone").value.trim();
+  const password = document.getElementById("loginPassword").value;
+  const user = getUsers().find(u => u.phone === phone && u.password === password);
+  if (!user) {
+    setMessage("loginMessage", "Phone number or password is incorrect.");
+    return;
+  }
+  localStorage.setItem("mmo_session", user.id);
+  setMessage("loginMessage", "Login successful.", true);
+  showPage("dashboard");
+});
 
-/* FEATURE 28: EXPORT MEMBER RECORDS AS CSV */
-function csvEscape(value) {
-  return '"' + String(value ?? "").replace(/"/g, '""') + '"';
+document.getElementById("paymentForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const users = getUsers();
+  const user = users.find(u => u.id === getSession());
+  if (!user) {
+    setMessage("paymentMessage", "Please log in before submitting payment details.");
+    return;
+  }
+  const amount = Number(document.getElementById("paymentAmount").value);
+  const reference = document.getElementById("paymentReference").value.trim();
+  if (!reference || amount <= 0) {
+    setMessage("paymentMessage", "Enter a valid amount and transaction reference.");
+    return;
+  }
+  user.amount = amount;
+  user.paymentReference = reference;
+  user.paymentStatus = "Pending";
+  saveUsers(users);
+  setMessage("paymentMessage", "Submitted for review. This does not mean the payment has been verified.", true);
+  e.target.reset();
+});
+
+function renderDashboard() {
+  const user = getUsers().find(u => u.id === getSession());
+  const info = document.getElementById("accountInfo");
+  const stats = document.getElementById("userStats");
+  if (!user) {
+    info.textContent = "Please log in to view your dashboard.";
+    stats.innerHTML = "";
+    document.getElementById("myReferral").textContent = "—";
+    document.getElementById("myReferrals").textContent = "0";
+    return;
+  }
+  info.textContent = "Welcome, " + user.name + ". Payment status: " + user.paymentStatus + ".";
+  stats.innerHTML = '<div class="stat">Amount submitted<strong>MK ' + Number(user.amount).toLocaleString() + '</strong></div>';
+  document.getElementById("myReferral").textContent = user.id;
+  document.getElementById("myReferrals").textContent =
+    getUsers().filter(u => u.referral.toLowerCase() === user.id.toLowerCase()).length;
 }
-
-function exportUsers() {
-  const keys = [
-    "fullname",
-    "username",
-    "phone",
-    "country",
-    "s
+function logout() {
+  localStorage.removeItem("mmo_session");
+  renderDashboard();
+  showPage("home");
+}
+document.getElementById("adminLoginForm").addEventListener("submit", e => {
+  e.preventDefault();
+  if (document.getElementById("adminPassword").value !== DEMO_ADMIN_PASSWORD) {
+    setMessage("adminMessage", "Incorrect demo admin password.");
+    return;
+  }
+  document.getElementById("adminLoginBox").classList.add("hidden");
+  document.getElementById("adminPanel").classList.remove("hidden");
+  renderAdmin();
+});
+function adminLogout() {
+  document.getElementById("adminPanel").classList.add("hidden");
+  document.getElementById("adminLoginBox").classList.remove("hidden");
+  document.getElementById("adminPassword").value = "";
+}
+function renderAdmin() {
+  const users = getUsers();
+  document.getElementById("totalUsers").textContent = users.length;
+  document.getElementById("pendingCount").textContent = users.filter(u => u.paymentStatus === "Pending").length;
+  document.getElementById("approvedCount").textContent = users.filter(u => u.paymentStatus === "Approved").length;
+  document.getElementById("adminVisits").textContent = localStorage.getItem("mmo_visits") || "0";
+  const body = document.getElementById("usersTable");
+  body.innerHTML = "";
+  users.forEach(u => {
+    const tr = document.createElement("tr");
+    const cells = [
+      u.name, u.phone, u.referral || "—",
+      u.paymentStatus + (u.amount ? " (MK " + Number(u.amount).toLocaleString() + ")" : "")
+    ];
+    cells.forEach(text => {
+      const td = document.createElement("td");
+      td.textContent = text;
+      tr.appendChild(td);
+    });
+    const action = document.createElement("td");
+    if (u.paymentStatus === "Pending") {
+      const approve = document.createElement("button");
+      approve.className = "action";
+      approve.textContent = "Approve";
+      approve.onclick = () => updatePayment(u.id, "Approved");
+      const reject = document.createElement("button");
+      reject.className = "action danger";
+      reject.textContent = "Reject";
+      reject.onclick = () => updatePayment(u.id, "Rejected");
+      action.append(approve, reject);
+    } else {
+      action.textContent = "No action";
+    }
+    tr.appendChild(action);
+    body.appendChild(tr);
+  });
+}
+function updatePayment(id, status) {
+  const users = getUsers();
+  const user = users.find(u => u.id === id);
+  if (!user) return;
+  if (!confirm("Have you independently verified this transaction? Set status to " + status + "?")) return;
+  user.paymentStatus = status;
+  saveUsers(users);
+  renderAdmin();
+}
+function exportCSV() {
+  const users = getUsers();
+  const rows = [["Name","Phone","Referral","Payment status","Amount","Reference","Created"]];
+  users.forEach(u => rows.push([
+    u.name,u.phone,u.referral,u.paymentStatus,u.amount,u.paymentReference,u.createdAt
+  ]));
+  const csv = rows.map(row => row.map(v => '"' + String(v ?? "").replace(/"/g,'""') + '"').join(",")).join("\r\n");
+  const blob = new Blob([csv], {type:"text/csv;charset=utf-8;"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "registrations.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+updateVisits();
+</script>
+</body>
+</html>
