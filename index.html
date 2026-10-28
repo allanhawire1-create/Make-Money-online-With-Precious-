@@ -4,374 +4,701 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Make Money Online</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033}
-header{background:#075e45;color:white;padding:18px;text-align:center}
-header h1{margin:0;font-size:25px}
-nav{display:flex;flex-wrap:wrap;justify-content:center;background:#064e3b}
-nav button{background:transparent;color:white;border:0;padding:13px;cursor:pointer}
-nav button:hover{background:#087653}
-main{max-width:950px;margin:20px auto;padding:12px}
-.card{background:white;padding:20px;border-radius:12px;margin-bottom:16px;box-shadow:0 2px 9px #0001}
-h2{margin-top:0;color:#075e45}
-input,select{width:100%;padding:12px;margin:7px 0 13px;border:1px solid #cbd5e1;border-radius:7px}
-button.action{background:#087653;color:white;border:0;border-radius:7px;padding:12px 16px;cursor:pointer;margin:4px 0}
-button.danger{background:#b91c1c}
-button:disabled{opacity:.5}
-.stat{display:inline-block;background:#ecfdf5;padding:14px;border-radius:8px;margin:4px;min-width:135px}
-.stat strong{display:block;font-size:22px;margin-top:5px}
-.hidden{display:none!important}
-.note{background:#fffbeb;padding:12px;border-radius:8px;color:#854d0e}
-.success{color:#047857}.error{color:#b91c1c}
-table{border-collapse:collapse;width:100%;font-size:13px}
-th,td{padding:9px;border-bottom:1px solid #e2e8f0;text-align:left}
-.table-wrap{overflow-x:auto}
-footer{text-align:center;padding:20px;color:#64748b}
+:root {
+  --green:#087f5b;
+  --dark:#043b2f;
+  --light:#f1f5f9;
+  --white:#ffffff;
+  --border:#d5e0e8;
+}
+* {box-sizing:border-box}
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:#172033;
+}
+header {
+  background:linear-gradient(120deg,#043b2f,#087f5b);
+  color:white;
+  padding:20px 12px;
+  text-align:center;
+}
+header h1 {margin:0;font-size:25px}
+header p {margin:8px 0}
+.live {
+  display:inline-block;
+  background:#064e3b;
+  padding:8px 13px;
+  border:1px solid #34d399;
+  border-radius:25px;
+  font-size:13px;
+}
+nav {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  background:var(--dark);
+}
+nav button {
+  background:transparent;
+  color:white;
+  border:0;
+  padding:13px 12px;
+  cursor:pointer;
+  font-size:14px;
+}
+nav button:hover {background:var(--green)}
+main {max-width:1000px;margin:20px auto;padding:12px}
+.card {
+  background:white;
+  border-radius:14px;
+  padding:20px;
+  margin-bottom:17px;
+  box-shadow:0 3px 14px #0000000b;
+}
+h2 {color:var(--green);margin-top:0}
+input,select {
+  width:100%;
+  padding:13px;
+  margin:7px 0 15px;
+  border:1px solid var(--border);
+  border-radius:7px;
+  font-size:16px;
+  background:white;
+}
+label {font-weight:600}
+button.action {
+  border:0;
+  padding:12px 17px;
+  border-radius:7px;
+  background:var(--green);
+  color:white;
+  cursor:pointer;
+  margin:4px 3px 4px 0;
+}
+button.secondary {background:#245b9e}
+button.danger {background:#b91c1c}
+button:disabled {opacity:.5}
+.hidden {display:none!important}
+.note {
+  background:#fffbeb;
+  color:#854d0e;
+  padding:13px;
+  border-radius:8px;
+  line-height:1.5;
+}
+.success {color:#047857}
+.error {color:#b91c1c}
+.stat {
+  display:inline-block;
+  vertical-align:top;
+  background:#ecfdf5;
+  padding:14px;
+  border-radius:8px;
+  margin:4px;
+  min-width:125px;
+}
+.stat strong {display:block;font-size:22px;margin-top:8px}
+.steps {
+  display:flex;
+  gap:6px;
+  margin:15px 0 22px;
+}
+.step {
+  flex:1;
+  text-align:center;
+  padding:10px 2px;
+  border-radius:7px;
+  background:#e2e8f0;
+  font-size:12px;
+}
+.step.active {background:var(--green);color:white}
+.progress {
+  height:7px;
+  background:#e2e8f0;
+  border-radius:9px;
+  overflow:hidden;
+  margin-bottom:18px;
+}
+.progress div {
+  height:100%;
+  width:25%;
+  background:#10b981;
+  transition:width .2s;
+}
+.table-wrap {overflow-x:auto}
+table {border-collapse:collapse;width:100%;font-size:13px}
+td,th {padding:9px;border-bottom:1px solid #e2e8f0;text-align:left}
+footer {text-align:center;padding:22px;color:#64748b}
+.password-line {display:flex;gap:8px;align-items:center}
+.password-line input {flex:1;min-width:0}
+.password-line label {white-space:nowrap;font-size:13px}
+.hero {
+  padding:35px 20px;
+  color:white;
+  border-radius:13px;
+  background:linear-gradient(135deg,#032b27,#086e53);
+}
+.hero h2 {color:white;font-size:32px}
+.hero strong {color:#34d399}
+@media(max-width:500px) {
+  nav button {padding:12px 8px;font-size:12px}
+  .card {padding:17px}
+  .hero h2 {font-size:27px}
+  .stat {min-width:105px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>Make Money Online</h1>
-  <p>Registration, referrals and payment tracking</p>
-  <div>🟢 Visitors recorded on this browser: <b id="visitorCount">0</b></div>
+  <h1>MAKE MONEY <span style="color:#34d399">ONLINE</span></h1>
+  <p>Registration • Referrals • Payment Tracking</p>
+
+  <div class="live">
+    🟢 Visits recorded on this browser:
+    <strong id="liveCount">0</strong>
+  </div>
+
+  <p style="font-size:12px">Managed by Precious Nyirenda</p>
+
+  <label for="language" style="font-size:13px">🌍 Language</label>
+  <select id="language" onchange="changeLanguage()"
+    style="width:auto;padding:7px;margin:8px">
+    <option value="en">English</option>
+    <option value="ny">Chichewa</option>
+    <option value="sw">Kiswahili</option>
+    <option value="fr">Français</option>
+    <option value="pt">Português</option>
+    <option value="ar">العربية</option>
+    <option value="ha">Hausa</option>
+    <option value="yo">Yorùbá</option>
+    <option value="zu">isiZulu</option>
+    <option value="am">አማርኛ</option>
+  </select>
 </header>
 
 <nav>
-  <button onclick="showPage('home')">Home</button>
-  <button onclick="showPage('register')">Register</button>
-  <button onclick="showPage('login')">Login</button>
-  <button onclick="showPage('payment')">Payment</button>
-  <button onclick="showPage('dashboard')">My Dashboard</button>
-  <button onclick="showPage('admin')">Admin</button>
+  <button onclick="showPage('home')" data-en="Home">Home</button>
+  <button onclick="showPage('register')" data-en="Register">Register</button>
+  <button onclick="showPage('login')" data-en="Login">Login</button>
+  <button onclick="showPage('payment')" data-en="Payment">Payment</button>
+  <button onclick="showPage('dashboard')" data-en="Dashboard">Dashboard</button>
+  <button onclick="showPage('admin')" data-en="Admin">Admin</button>
 </nav>
 
 <main>
+
+<!-- HOME -->
 <section id="home" class="page">
-  <div class="card">
-    <h2>Welcome</h2>
-    <p>Create an account and submit your registration payment for review.</p>
-    <p class="note">Registration fee: <b>MK 5,000</b>. Payment must be verified before an account is marked as paid. Registration does not guarantee earnings.</p>
-    <button class="action" onclick="showPage('register')">Create Account</button>
+  <div class="card hero">
+    <h2>Make Money <strong>Online</strong></h2>
+    <p>Register, manage your account, and track payment status.</p>
+    <p>Registration fee: <strong>MK 5,000</strong></p>
+    <button class="action" onclick="showPage('register')">
+      Get Started →
+    </button>
   </div>
+
   <div class="card">
-    <h2>How it works</h2>
-    <ol>
-      <li>Register with your details.</li>
-      <li>Read the payment instructions.</li>
-      <li>Submit your payment reference for review.</li>
-      <li>Check your account for the review status.</li>
-    </ol>
+    <h2>How It Works</h2>
+    <p>1. Create your account.</p>
+    <p>2. Enter your contact details.</p>
+    <p>3. Read the payment instructions.</p>
+    <p>4. Submit your transaction reference for review.</p>
+    <p class="note">
+      Paying a registration fee does not guarantee earnings.
+      Check the terms and conditions before sending money.
+    </p>
   </div>
 </section>
 
+<!-- FOUR-STEP REGISTRATION -->
 <section id="register" class="page hidden">
   <div class="card">
-    <h2>Create Account</h2>
+    <h2>Create Your Account</h2>
+
+    <div class="steps">
+      <div class="step active" id="stepLabel1">1. Details</div>
+      <div class="step" id="stepLabel2">2. Country</div>
+      <div class="step" id="stepLabel3">3. Security</div>
+      <div class="step" id="stepLabel4">4. Confirm</div>
+    </div>
+
+    <div class="progress"><div id="progressBar"></div></div>
+
     <form id="registerForm">
-      <label>Full name</label><input id="regName" required maxlength="80">
-      <label>Phone number</label><input id="regPhone" required type="tel" maxlength="25">
-      <label>Create a password</label><input id="regPassword" required type="password" minlength="8" autocomplete="new-password">
-      <label>Referral code (optional)</label><input id="regReferral" maxlength="30">
-      <p class="note">Prototype notice: account information is stored in this browser. Do not use a password you use elsewhere.</p>
-      <button class="action">Register</button>
+
+      <!-- STEP 1 -->
+      <div class="regStep" id="regStep1">
+        <h3>Step 1: Personal Details</h3>
+
+        <label for="regName">Full name</label>
+        <input id="regName" required maxlength="80"
+          placeholder="Enter your full name">
+
+        <label for="regUsername">Username</label>
+        <input id="regUsername" required maxlength="30"
+          placeholder="Choose a username">
+
+        <button type="button" class="action" onclick="nextStep(1)">
+          Next →
+        </button>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="regStep hidden" id="regStep2">
+        <h3>Step 2: Country and Phone</h3>
+
+        <label for="regCountry">Choose your African country</label>
+        <select id="regCountry" required></select>
+
+        <label for="regPhone">Phone number</label>
+        <input id="regPhone" type="tel" required
+          placeholder="Enter phone number">
+
+        <label for="regReferral">Referral code (optional)</label>
+        <input id="regReferral" placeholder="Referral code">
+
+        <button type="button" class="action secondary"
+          onclick="prevStep(2)">← Back</button>
+        <button type="button" class="action" onclick="nextStep(2)">
+          Next →
+        </button>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="regStep hidden" id="regStep3">
+        <h3>Step 3: Create Password</h3>
+
+        <label for="regPassword">Password</label>
+        <div class="password-line">
+          <input id="regPassword" type="password" minlength="8"
+            required autocomplete="new-password"
+            placeholder="At least 8 characters">
+          <label>
+            <input type="checkbox" style="width:auto;margin:0"
+              onchange="togglePassword('regPassword',this)">
+            Show
+          </label>
+        </div>
+
+        <label for="regPassword2">Confirm password</label>
+        <div class="password-line">
+          <input id="regPassword2" type="password" minlength="8"
+            required autocomplete="new-password"
+            placeholder="Enter password again">
+          <label>
+            <input type="checkbox" style="width:auto;margin:0"
+              onchange="togglePassword('regPassword2',this)">
+            Show
+          </label>
+        </div>
+
+        <p class="note">
+          Use a unique password. This local demonstration is not
+          suitable for storing real passwords securely.
+        </p>
+
+        <button type="button" class="action secondary"
+          onclick="prevStep(3)">← Back</button>
+        <button type="button" class="action" onclick="nextStep(3)">
+          Next →
+        </button>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="regStep hidden" id="regStep4">
+        <h3>Step 4: Review and Register</h3>
+
+        <div id="registrationSummary"></div>
+
+        <label>
+          <input id="acceptTerms" type="checkbox"
+            style="width:auto" required>
+          I have read the privacy notice and terms.
+        </label>
+
+        <p class="note">
+          Your records will be stored in this browser.
+          They will not automatically appear on another phone.
+        </p>
+
+        <button type="button" class="action secondary"
+          onclick="prevStep(4)">← Back</button>
+
+        <button type="submit" class="action">
+          Create Account
+        </button>
+      </div>
+
     </form>
     <p id="registerMessage"></p>
   </div>
 </section>
 
+<!-- LOGIN -->
 <section id="login" class="page hidden">
   <div class="card">
-    <h2>Login</h2>
+    <h2>Member Login</h2>
+
     <form id="loginForm">
-      <label>Phone number</label><input id="loginPhone" required type="tel">
-      <label>Password</label><input id="loginPassword" required type="password" autocomplete="current-password">
+      <label for="loginPhone">Phone number</label>
+      <input id="loginPhone" required type="tel">
+
+      <label for="loginPassword">Password</label>
+      <div class="password-line">
+        <input id="loginPassword" type="password" required
+          autocomplete="current-password">
+        <label>
+          <input type="checkbox" style="width:auto;margin:0"
+            onchange="togglePassword('loginPassword',this)">
+          Show
+        </label>
+      </div>
+
       <button class="action">Login</button>
     </form>
+
     <p id="loginMessage"></p>
+    <p>Don't have an account?
+      <a href="#" onclick="showPage('register');return false">Register here</a>
+    </p>
   </div>
 </section>
 
+<!-- PAYMENT -->
 <section id="payment" class="page hidden">
   <div class="card">
     <h2>Registration Payment</h2>
-    <p>Registration fee: <strong>MK 5,000</strong></p>
-    <p>Payment recipient: <strong>Precious Nyirenda</strong></p>
-    <p>Payment number: <strong>0980418922</strong></p>
-    <p class="note">Confirm the recipient and number before sending money. Keep your transaction reference. Never share your PIN.</p>
+
+    <h3>MK 5,000</h3>
+    <p><strong>Payment method:</strong> Airtel Money Malawi</p>
+    <p><strong>Recipient:</strong> Precious Nyirenda</p>
+    <p><strong>Number:</strong> 0980418922</p>
+
+    <div class="note">
+      <strong>Before sending money</strong>
+      <p>Verify the recipient name and number on your payment screen.</p>
+      <p>Never share your Airtel Money PIN or one-time password.</p>
+      <p>Keep your transaction reference for verification.</p>
+    </div>
+
+    <button class="action secondary" onclick="copyNumber()">
+      Copy Payment Number
+    </button>
+
     <form id="paymentForm">
-      <label>Transaction reference</label>
+      <label for="paymentReference">Transaction reference</label>
       <input id="paymentReference" required maxlength="100">
-      <label>Amount paid (MK)</label>
+
+      <label for="paymentAmount">Amount paid (MK)</label>
       <input id="paymentAmount" type="number" min="1" required>
+
       <button class="action">Submit for Review</button>
     </form>
+
     <p id="paymentMessage"></p>
   </div>
 </section>
 
+<!-- MEMBER DASHBOARD -->
 <section id="dashboard" class="page hidden">
   <div class="card">
     <h2>My Dashboard</h2>
-    <p id="accountInfo">Please log in to view your dashboard.</p>
+    <p id="accountInfo">Please log in to continue.</p>
     <div id="userStats"></div>
-    <button class="action" onclick="showPage('payment')">Submit Payment</button>
-    <button class="action" onclick="logout()">Logout</button>
+
+    <button class="action" onclick="showPage('payment')">
+      Payment
+    </button>
+    <button class="action secondary" onclick="downloadMyData()">
+      Download My Records
+    </button>
+    <button class="action danger" onclick="logout()">
+      Logout
+    </button>
   </div>
+
   <div class="card">
     <h2>Referral Information</h2>
-    <p>Your referral code: <b id="myReferral">—</b></p>
-    <p>People registered using your code: <b id="myReferrals">0</b></p>
+    <p>Your referral code: <strong id="myReferral">—</strong></p>
+    <p>Registered referrals: <strong id="myReferrals">0</strong></p>
+    <button class="action" onclick="copyReferral()">Copy Referral Code</button>
   </div>
 </section>
 
+<!-- ADMIN -->
 <section id="admin" class="page hidden">
-  <div class="card" id="adminLoginBox">
+  <div id="adminLoginBox" class="card">
     <h2>Administrator Login</h2>
-    <p class="note">This local demo is not secure for real users or payments. A password embedded in HTML can be discovered by inspecting the source.</p>
+
     <form id="adminLoginForm">
-      <label>Admin password</label>
-      <input id="adminPassword" type="password" required autocomplete="current-password">
+      <label for="adminPassword">Admin password</label>
+      <div class="password-line">
+        <input id="adminPassword" type="password" required
+          autocomplete="current-password">
+        <label>
+          <input type="checkbox" style="width:auto;margin:0"
+            onchange="togglePassword('adminPassword',this)">
+          Show
+        </label>
+      </div>
       <button class="action">Open Admin Dashboard</button>
     </form>
+
     <p id="adminMessage"></p>
+
+    <p class="note">
+      Prototype warning: the admin password is stored in this HTML
+      file and can be discovered by inspecting the source.
+      Do not use this version for sensitive real payment records.
+    </p>
   </div>
 
   <div id="adminPanel" class="hidden">
     <div class="card">
-      <h2>Admin Dashboard</h2>
+      <h2>Administrator Dashboard</h2>
+
       <div class="stat">Registrations<strong id="totalUsers">0</strong></div>
-      <div class="stat">Pending payments<strong id="pendingCount">0</strong></div>
-      <div class="stat">Approved payments<strong id="approvedCount">0</strong></div>
-      <div class="stat">Recorded visits<strong id="adminVisits">0</strong></div>
-      <p class="note">Only accounts stored in this browser appear here. Approval is a manual record; verify the transaction independently before approving.</p>
+      <div class="stat">Pending<strong id="pendingCount">0</strong></div>
+      <div class="stat">Approved<strong id="approvedCount">0</strong></div>
+      <div class="stat">Local Visits<strong id="adminVisits">0</strong></div>
+
+      <p class="note">
+        These figures cover only records in this browser.
+        They are not global or cross-device statistics.
+      </p>
+
       <button class="action" onclick="exportCSV()">Export CSV</button>
       <button class="action danger" onclick="adminLogout()">Close Admin</button>
     </div>
+
     <div class="card">
       <h2>Registered Users</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Name</th><th>Phone</th><th>Referral</th><th>Payment</th><th>Action</th></tr></thead>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Payment</th>
+              <th>Reference</th>
+              <th>Action</th>
+            </tr>
+          </thead>
           <tbody id="usersTable"></tbody>
         </table>
       </div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
-  <p>Make Money Online — prototype</p>
-  <p>Records are stored locally on this browser and may be lost if browser data is cleared.</p>
+  <p>Make Money Online — local prototype</p>
+  <p>Records are saved in this browser only.</p>
 </footer>
 
 <script>
-/*
-  LOCAL DEMO ONLY.
-  The admin password is a demonstration password, not secure authentication.
-  Never use this file alone to store real passwords or sensitive payment data.
-*/
-const DEMO_ADMIN_PASSWORD = "ChangeThisAdminPassword";
+/* ======================================================
+   CONFIGURATION
+   ====================================================== */
 
-const getUsers = () => {
-  try { return JSON.parse(localStorage.getItem("mmo_users") || "[]"); }
-  catch { return []; }
+// Demonstration password requested by the site owner.
+// This is NOT secure authentication for a real website.
+const ADMIN_PASSWORD = "Precious2009";
+
+const PAYMENT_NUMBER = "0980418922";
+
+const countries = [
+ ["Algeria","+213"],["Angola","+244"],["Benin","+229"],
+ ["Botswana","+267"],["Burkina Faso","+226"],["Burundi","+257"],
+ ["Cabo Verde","+238"],["Cameroon","+237"],
+ ["Central African Republic","+236"],["Chad","+235"],
+ ["Comoros","+269"],["Republic of the Congo","+242"],
+ ["Democratic Republic of the Congo","+243"],
+ ["Côte d’Ivoire","+225"],["Djibouti","+253"],["Egypt","+20"],
+ ["Equatorial Guinea","+240"],["Eritrea","+291"],["Eswatini","+268"],
+ ["Ethiopia","+251"],["Gabon","+241"],["The Gambia","+220"],
+ ["Ghana","+233"],["Guinea","+224"],["Guinea-Bissau","+245"],
+ ["Kenya","+254"],["Lesotho","+266"],["Liberia","+231"],
+ ["Libya","+218"],["Madagascar","+261"],["Malawi","+265"],
+ ["Mali","+223"],["Mauritania","+222"],["Mauritius","+230"],
+ ["Morocco","+212"],["Mozambique","+258"],["Namibia","+264"],
+ ["Niger","+227"],["Nigeria","+234"],["Rwanda","+250"],
+ ["São Tomé and Príncipe","+239"],["Senegal","+221"],
+ ["Seychelles","+248"],["Sierra Leone","+232"],["Somalia","+252"],
+ ["South Africa","+27"],["South Sudan","+211"],["Sudan","+249"],
+ ["Tanzania","+255"],["Togo","+228"],["Tunisia","+216"],
+ ["Uganda","+256"],["Zambia","+260"],["Zimbabwe","+263"]
+];
+
+const translations = {
+ en:{
+  home:"Home",register:"Register",login:"Login",
+  payment:"Payment",dashboard:"Dashboard",admin:"Admin"
+ },
+ ny:{
+  home:"Kunyumba",register:"Lembetsani",login:"Lowani",
+  payment:"Malipiro",dashboard:"Dashboard",admin:"Admin"
+ },
+ sw:{
+  home:"Nyumbani",register:"Jisajili",login:"Ingia",
+  payment:"Malipo",dashboard:"Dashibodi",admin:"Msimamizi"
+ },
+ fr:{
+  home:"Accueil",register:"S'inscrire",login:"Connexion",
+  payment:"Paiement",dashboard:"Tableau de bord",admin:"Admin"
+ },
+ pt:{
+  home:"Início",register:"Registar",login:"Entrar",
+  payment:"Pagamento",dashboard:"Painel",admin:"Admin"
+ },
+ ar:{
+  home:"الرئيسية",register:"التسجيل",login:"تسجيل الدخول",
+  payment:"الدفع",dashboard:"لوحة التحكم",admin:"المشرف"
+ },
+ ha:{
+  home:"Gida",register:"Yi rajista",login:"Shiga",
+  payment:"Biya",dashboard:"Allon bayanai",admin:"Mai gudanarwa"
+ },
+ yo:{
+  home:"Ilé",register:"Forúkọ sílẹ̀",login:"Wọlé",
+  payment:"Ìsanwó",dashboard:"Pánẹ́lì",admin:"Alábójútó"
+ },
+ zu:{
+  home:"Ikhaya",register:"Bhalisa",login:"Ngena",
+  payment:"Inkokhelo",dashboard:"Ideshibhodi",admin:"Umlawuli"
+ },
+ am:{
+  home:"መነሻ",register:"ይመዝገቡ",login:"ግባ",
+  payment:"ክፍያ",dashboard:"ዳሽቦርድ",admin:"አስተዳዳሪ"
+ }
 };
-const saveUsers = users => localStorage.setItem("mmo_users", JSON.stringify(users));
-const getSession = () => localStorage.getItem("mmo_session");
-const setMessage = (id, text, ok=false) => {
-  const el = document.getElementById(id);
-  el.textContent = text;
-  el.className = ok ? "success" : "error";
-};
-const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, c => ({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-}[c]));
 
-function showPage(page) {
-  document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
-  document.getElementById(page).classList.remove("hidden");
-  if (page === "dashboard") renderDashboard();
-  if (page === "admin") {
-    document.getElementById("adminLoginBox").classList.remove("hidden");
-    document.getElementById("adminPanel").classList.add("hidden");
-  }
+function getUsers(){
+ try{return JSON.parse(localStorage.getItem("mmo_users")||"[]")}
+ catch(e){return []}
 }
-function updateVisits() {
-  // Counts visits only on this browser, not real-time visitors across the internet.
-  const count = Number(localStorage.getItem("mmo_visits") || "0") + 1;
-  localStorage.setItem("mmo_visits", String(count));
-  document.getElementById("visitorCount").textContent = count;
+function saveUsers(users){
+ localStorage.setItem("mmo_users",JSON.stringify(users));
 }
-function newId() {
-  return "U" + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2,6).toUpperCase();
+function getSession(){
+ return localStorage.getItem("mmo_session");
 }
-
-document.getElementById("registerForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const name = document.getElementById("regName").value.trim();
-  const phone = document.getElementById("regPhone").value.trim();
-  const password = document.getElementById("regPassword").value;
-  const referral = document.getElementById("regReferral").value.trim();
-  const users = getUsers();
-
-  if (users.some(u => u.phone === phone)) {
-    setMessage("registerMessage", "This phone number is already registered.");
-    return;
-  }
-  if (password.length < 8) {
-    setMessage("registerMessage", "Use a password with at least 8 characters.");
-    return;
-  }
-
-  // Demo-only storage. Passwords are NOT safe to store this way in a real website.
-  users.push({
-    id:newId(), name, phone, password, referral,
-    paymentStatus:"Not submitted", amount:0, paymentReference:"",
-    createdAt:new Date().toISOString()
-  });
-  saveUsers(users);
-  setMessage("registerMessage", "Account created on this browser. You can now log in.", true);
-  e.target.reset();
-});
-
-document.getElementById("loginForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const phone = document.getElementById("loginPhone").value.trim();
-  const password = document.getElementById("loginPassword").value;
-  const user = getUsers().find(u => u.phone === phone && u.password === password);
-  if (!user) {
-    setMessage("loginMessage", "Phone number or password is incorrect.");
-    return;
-  }
-  localStorage.setItem("mmo_session", user.id);
-  setMessage("loginMessage", "Login successful.", true);
-  showPage("dashboard");
-});
-
-document.getElementById("paymentForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const users = getUsers();
-  const user = users.find(u => u.id === getSession());
-  if (!user) {
-    setMessage("paymentMessage", "Please log in before submitting payment details.");
-    return;
-  }
-  const amount = Number(document.getElementById("paymentAmount").value);
-  const reference = document.getElementById("paymentReference").value.trim();
-  if (!reference || amount <= 0) {
-    setMessage("paymentMessage", "Enter a valid amount and transaction reference.");
-    return;
-  }
-  user.amount = amount;
-  user.paymentReference = reference;
-  user.paymentStatus = "Pending";
-  saveUsers(users);
-  setMessage("paymentMessage", "Submitted for review. This does not mean the payment has been verified.", true);
-  e.target.reset();
-});
-
-function renderDashboard() {
-  const user = getUsers().find(u => u.id === getSession());
-  const info = document.getElementById("accountInfo");
-  const stats = document.getElementById("userStats");
-  if (!user) {
-    info.textContent = "Please log in to view your dashboard.";
-    stats.innerHTML = "";
-    document.getElementById("myReferral").textContent = "—";
-    document.getElementById("myReferrals").textContent = "0";
-    return;
-  }
-  info.textContent = "Welcome, " + user.name + ". Payment status: " + user.paymentStatus + ".";
-  stats.innerHTML = '<div class="stat">Amount submitted<strong>MK ' + Number(user.amount).toLocaleString() + '</strong></div>';
-  document.getElementById("myReferral").textContent = user.id;
-  document.getElementById("myReferrals").textContent =
-    getUsers().filter(u => u.referral.toLowerCase() === user.id.toLowerCase()).length;
+function setMessage(id,message,success=false){
+ const el=document.getElementById(id);
+ el.textContent=message;
+ el.className=success?"success":"error";
 }
-function logout() {
-  localStorage.removeItem("mmo_session");
-  renderDashboard();
-  showPage("home");
-}
-document.getElementById("adminLoginForm").addEventListener("submit", e => {
-  e.preventDefault();
-  if (document.getElementById("adminPassword").value !== DEMO_ADMIN_PASSWORD) {
-    setMessage("adminMessage", "Incorrect demo admin password.");
-    return;
-  }
-  document.getElementById("adminLoginBox").classList.add("hidden");
-  document.getElementById("adminPanel").classList.remove("hidden");
-  renderAdmin();
-});
-function adminLogout() {
-  document.getElementById("adminPanel").classList.add("hidden");
+function showPage(id){
+ document.querySelectorAll(".page").forEach(el=>el.classList.add("hidden"));
+ document.getElementById(id).classList.remove("hidden");
+
+ if(id==="dashboard")renderDashboard();
+
+ if(id==="admin"){
   document.getElementById("adminLoginBox").classList.remove("hidden");
-  document.getElementById("adminPassword").value = "";
+  document.getElementById("adminPanel").classList.add("hidden");
+ }
 }
-function renderAdmin() {
-  const users = getUsers();
-  document.getElementById("totalUsers").textContent = users.length;
-  document.getElementById("pendingCount").textContent = users.filter(u => u.paymentStatus === "Pending").length;
-  document.getElementById("approvedCount").textContent = users.filter(u => u.paymentStatus === "Approved").length;
-  document.getElementById("adminVisits").textContent = localStorage.getItem("mmo_visits") || "0";
-  const body = document.getElementById("usersTable");
-  body.innerHTML = "";
-  users.forEach(u => {
-    const tr = document.createElement("tr");
-    const cells = [
-      u.name, u.phone, u.referral || "—",
-      u.paymentStatus + (u.amount ? " (MK " + Number(u.amount).toLocaleString() + ")" : "")
-    ];
-    cells.forEach(text => {
-      const td = document.createElement("td");
-      td.textContent = text;
-      tr.appendChild(td);
-    });
-    const action = document.createElement("td");
-    if (u.paymentStatus === "Pending") {
-      const approve = document.createElement("button");
-      approve.className = "action";
-      approve.textContent = "Approve";
-      approve.onclick = () => updatePayment(u.id, "Approved");
-      const reject = document.createElement("button");
-      reject.className = "action danger";
-      reject.textContent = "Reject";
-      reject.onclick = () => updatePayment(u.id, "Rejected");
-      action.append(approve, reject);
-    } else {
-      action.textContent = "No action";
-    }
-    tr.appendChild(action);
-    body.appendChild(tr);
-  });
+function togglePassword(id,checkbox){
+ document.getElementById(id).type=checkbox.checked?"text":"password";
 }
-function updatePayment(id, status) {
-  const users = getUsers();
-  const user = users.find(u => u.id === id);
-  if (!user) return;
-  if (!confirm("Have you independently verified this transaction? Set status to " + status + "?")) return;
-  user.paymentStatus = status;
-  saveUsers(users);
-  renderAdmin();
+
+/* ======================================================
+   COUNTRY SELECTOR
+   ====================================================== */
+const countrySelect=document.getElementById("regCountry");
+
+countries.forEach(([name,code])=>{
+ const option=document.createElement("option");
+ option.value=code;
+ option.textContent=name+" ("+code+")";
+ if(name==="Malawi")option.selected=true;
+ countrySelect.appendChild(option);
+});
+
+/* ======================================================
+   LOCAL VISIT COUNTER
+   ====================================================== */
+function updateVisits(){
+ const count=Number(localStorage.getItem("mmo_visits")||"0")+1;
+ localStorage.setItem("mmo_visits",String(count));
+ document.getElementById("liveCount").textContent=count;
 }
-function exportCSV() {
-  const users = getUsers();
-  const rows = [["Name","Phone","Referral","Payment status","Amount","Reference","Created"]];
-  users.forEach(u => rows.push([
-    u.name,u.phone,u.referral,u.paymentStatus,u.amount,u.paymentReference,u.createdAt
-  ]));
-  const csv = rows.map(row => row.map(v => '"' + String(v ?? "").replace(/"/g,'""') + '"').join(",")).join("\r\n");
-  const blob = new Blob([csv], {type:"text/csv;charset=utf-8;"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "registrations.csv";
-  a.click();
-  URL.revokeObjectURL(url);
+
+/* ======================================================
+   FOUR-STEP REGISTRATION
+   ====================================================== */
+let currentStep=1;
+
+function displayStep(n){
+ currentStep=n;
+
+ document.querySelectorAll(".regStep").forEach(el=>el.classList.add("hidden"));
+ document.getElementById("regStep"+n).classList.remove("hidden");
+
+ for(let i=1;i<=4;i++){
+  document.getElementById("stepLabel"+i).classList.toggle("active",i===n);
+ }
+
+ document.getElementById("progressBar").style.width=(n*25)+"%";
+
+ if(n===4){
+  document.getElementById("registrationSummary").innerHTML=
+   "<p><b>Name:</b> "+escapeHTML(document.getElementById("regName").value)+"</p>"+
+   "<p><b>Username:</b> "+escapeHTML(document.getElementById("regUsername").value)+"</p>"+
+   "<p><b>Country:</b> "+escapeHTML(countrySelect.options[countrySelect.selectedIndex].text)+"</p>"+
+   "<p><b>Phone:</b> "+escapeHTML(document.getElementById("regPhone").value)+"</p>";
+ }
 }
-updateVisits();
-</script>
-</body>
-</html>
+
+function nextStep(step){
+ const section=document.getElementById("regStep"+step);
+ const fields=section.querySelectorAll("input,select");
+
+ for(const field of fields){
+  if(field.type==="checkbox")continue;
+  if(!field.checkValidity()){
+   field.reportValidity();
+   return;
+  }
+ }
+
+ if(step===3){
+  const p1=document.getElementById("regPassword").value;
+  const p2=document.getElementById("regPassword2").value;
+
+  if(p1.length<8){
+   setMessage("registerMessage","Use at least 8 characters for your password.");
+   return;
+  }
+  if(p1!==p2){
+   setMessage("registerMessage","The passwords do not match.");
+   return;
+  }
+ }
+
+ setMessage("registerMessage","");
+ displayStep(step+1);
+}
+function prevStep(step){
+ displayStep(step-1);
+}
+
+function createId(){
+ return "U"+Date.now().toString(36).toUpperCase()+
+ Math.random().toString(36).slice(2,6).toUpperCase();
+}
+
+document.getElementById("registerForm").addEventListener("submit",function(e){
+ e.preventDefault();
+
+ if(!document.getElement
