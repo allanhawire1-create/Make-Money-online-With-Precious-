@@ -30,4 +30,390 @@ function shareWA(){let link=document.getElementById('reflink').innerText;let txt
 function shareFB(){let link=document.getElementById('reflink').innerText;window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(link));}
 function exportData(){let csv='Fullname,Username,Phone,Country,TID,Sponsor,Ref,Status,Date\n'+users.map(u=>`"${u.fullname}","${u.username}","${u.phone}","${u.country}","${u.tid}","${u.sponsor}","${u.ref}","${u.status}","${u.date}"`).join('\n');let blob=new Blob([csv],{type:'text/csv'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='make_money_online_users.csv';a.click();}
 setInterval(()=>{let c=document.getElementById('liveCount');if(c){let n=100+Math.floor(Math.random()*80);c.innerText='● LIVE: '+n+' online';}},4000);
-</script></body></html>
+</script>
+<!-- ==========================================
+ MAKE MONEY ONLINE: 15 FEATURE UPGRADE
+ Front-end prototype
+=========================================== -->
+
+<style>
+.mmo15{
+  max-width:440px;
+  margin:12px auto;
+  padding:16px;
+  background:linear-gradient(180deg,#121e3b,#0e1832);
+  border:1px solid #22365f;
+  border-radius:18px;
+  color:#fff;
+  font-family:Inter,system-ui,sans-serif;
+}
+.mmo15 *{box-sizing:border-box}
+.mmo15 h2,.mmo15 h3{margin-bottom:10px}
+.mmo15 p{margin:7px 0}
+.mmo15 label{
+  display:block;
+  font-size:11px;
+  color:#9ab0d6;
+  margin-top:12px;
+}
+.mmo15 input,.mmo15 select,.mmo15 textarea{
+  display:block;
+  width:100%;
+  padding:11px;
+  margin-top:5px;
+  background:#0a1330;
+  color:white;
+  border:1px solid #2a4370;
+  border-radius:9px;
+}
+.mmo15 button{
+  cursor:pointer;
+  border:0;
+  border-radius:9px;
+  padding:10px;
+  margin:4px 2px;
+  background:#23406b;
+  color:#fff;
+}
+.mmo15 .primary{
+  background:linear-gradient(90deg,#3b82f6,#2af59e);
+  color:#000;
+  font-weight:800;
+}
+.mmo15 .tiles{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin:12px 0;
+}
+.mmo15 .tile{
+  background:#0a1330;
+  border:1px solid #22365f;
+  border-radius:11px;
+  padding:12px;
+  overflow-wrap:anywhere;
+}
+.mmo15 .green{color:#2af59e}
+.mmo15 .muted{color:#9ab0d6;font-size:12px}
+.mmo15 .item{
+  border:1px solid #22365f;
+  background:#0a1330;
+  border-radius:10px;
+  padding:11px;
+  margin:8px 0;
+  overflow-wrap:anywhere;
+}
+.mmo15 .hidden{display:none!important}
+.mmo15 .bar{
+  height:10px;
+  background:#22365f;
+  border-radius:10px;
+  overflow:hidden;
+}
+.mmo15 .bar span{
+  display:block;
+  height:100%;
+  width:0;
+  background:#2af59e;
+}
+#mmo15Nav{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:5px;
+  margin:12px 0;
+}
+#mmo15Nav button{font-size:11px;margin:0}
+#mmo15Status{
+  font-size:12px;
+  color:#2af59e;
+  margin:8px 0;
+}
+</style>
+
+<div class="mmo15" id="mmo15App">
+  <h2>🚀 Member Centre</h2>
+  <p class="muted">
+    Make Money Online • Additional Member Features
+  </p>
+
+  <div id="mmo15Status" role="status" aria-live="polite">
+    Demo mode: earnings and payments are not independently verified.
+  </div>
+
+  <label for="mmo15User">Registered username</label>
+  <input id="mmo15User" placeholder="Enter your registered username">
+
+  <button class="primary" onclick="mmo15Login()">
+    OPEN MY DASHBOARD
+  </button>
+
+  <button onclick="mmo15Logout()">LOG OUT</button>
+
+  <div id="mmo15Member" class="hidden">
+
+    <div id="mmo15Nav">
+      <button onclick="mmo15Page('home')">🏠 Home</button>
+      <button onclick="mmo15Page('tasks')">📋 Tasks</button>
+      <button onclick="mmo15Page('referrals')">👥 Referrals</button>
+      <button onclick="mmo15Page('withdraw')">🏦 Withdraw</button>
+      <button onclick="mmo15Page('payments')">💳 Payments</button>
+      <button onclick="mmo15Page('notifications')">🔔 Alerts</button>
+      <button onclick="mmo15Page('leaderboard')">🏆 Rankings</button>
+      <button onclick="mmo15Page('rewards')">🎁 Rewards</button>
+      <button onclick="mmo15Page('profile')">👤 Profile</button>
+      <button onclick="mmo15Page('password')">🔑 Password</button>
+      <button onclick="mmo15Page('analytics')">📊 Analytics</button>
+      <button onclick="mmo15Page('export')">📥 Export</button>
+      <button onclick="mmo15Page('privacy')">🛡️ Privacy</button>
+      <button onclick="mmo15Page('support')">📞 Support</button>
+    </div>
+
+    <!-- 1. MEMBER DASHBOARD -->
+    <section id="mmo15-home">
+      <h3>👤 My Dashboard</h3>
+
+      <div class="tiles">
+        <div class="tile">
+          <div class="muted">Username</div>
+          <b id="mmo15Name">-</b>
+        </div>
+        <div class="tile">
+          <div class="muted">Account status</div>
+          <b id="mmo15Account">Unverified</b>
+        </div>
+        <div class="tile">
+          <div class="muted">Recorded earnings</div>
+          <b id="mmo15Earn" class="green">K0</b>
+        </div>
+        <div class="tile">
+          <div class="muted">Referral count</div>
+          <b id="mmo15RefCount">0</b>
+        </div>
+      </div>
+
+      <p class="muted">
+        Only verified transactions should be treated as actual
+        earnings. Values here are local prototype records.
+      </p>
+    </section>
+
+    <!-- 2. EARNINGS SUMMARY -->
+    <section id="mmo15-earnings" class="hidden">
+      <h3>💰 Earnings Summary</h3>
+      <div class="tiles">
+        <div class="tile">
+          <div class="muted">Recorded total</div>
+          <b id="mmo15Total">K0</b>
+        </div>
+        <div class="tile">
+          <div class="muted">Recorded withdrawals</div>
+          <b id="mmo15Withdrawn">K0</b>
+        </div>
+      </div>
+      <p class="muted">
+        This page does not create money or confirm a payout.
+      </p>
+    </section>
+
+    <!-- 3. DAILY TASKS -->
+    <section id="mmo15-tasks" class="hidden">
+      <h3>📋 Daily Tasks Centre</h3>
+      <p class="muted">
+        Sample activities only. These are not confirmed paid jobs.
+      </p>
+
+      <div id="mmo15TaskList"></div>
+
+      <label for="mmo15TaskProof">Task description or proof reference</label>
+      <textarea id="mmo15TaskProof"
+        placeholder="Describe the task you completed"></textarea>
+
+      <button class="primary" onclick="mmo15SubmitTask()">
+        SUBMIT FOR REVIEW
+      </button>
+
+      <div id="mmo15TaskHistory"></div>
+    </section>
+
+    <!-- 4. REFERRALS -->
+    <section id="mmo15-referrals" class="hidden">
+      <h3>👥 My Referrals</h3>
+
+      <label for="mmo15ReferralLink">Your referral link</label>
+      <input id="mmo15ReferralLink" readonly>
+
+      <button onclick="mmo15CopyLink()">COPY REFERRAL LINK</button>
+
+      <div id="mmo15ReferralHistory"></div>
+
+      <p class="muted">
+        Referrals and commissions must be verified by the server
+        before being counted as payable.
+      </p>
+    </section>
+
+    <!-- 5. WITHDRAWALS -->
+    <section id="mmo15-withdraw" class="hidden">
+      <h3>🏦 Withdrawal Requests</h3>
+
+      <label for="mmo15Amount">Amount in MWK</label>
+      <input id="mmo15Amount" type="number" min="1"
+        placeholder="Enter requested amount">
+
+      <label for="mmo15Method">Payment method</label>
+      <select id="mmo15Method">
+        <option value="Airtel Money">Airtel Money</option>
+        <option value="TNM Mpamba">TNM Mpamba</option>
+        <option value="Bank Transfer">Bank Transfer</option>
+      </select>
+
+      <label for="mmo15Destination">Your payment number or account</label>
+      <input id="mmo15Destination"
+        placeholder="Enter payment destination">
+
+      <button class="primary" onclick="mmo15Withdraw()">
+        REQUEST WITHDRAWAL
+      </button>
+
+      <div id="mmo15WithdrawalHistory"></div>
+
+      <p class="muted">
+        Requests are recorded locally as pending. No money is transferred.
+      </p>
+    </section>
+
+    <!-- 6. PAYMENT HISTORY -->
+    <section id="mmo15-payments" class="hidden">
+      <h3>💳 Payment History</h3>
+      <div id="mmo15PaymentHistory"></div>
+      <p class="muted">
+        A submitted receipt is not proof that a payment was received.
+      </p>
+    </section>
+
+    <!-- 7. NOTIFICATIONS -->
+    <section id="mmo15-notifications" class="hidden">
+      <h3>🔔 Notifications</h3>
+      <div id="mmo15NotificationList"></div>
+      <button onclick="mmo15ClearNotifications()">
+        CLEAR NOTIFICATIONS
+      </button>
+    </section>
+
+    <!-- 8. LEADERBOARD -->
+    <section id="mmo15-leaderboard" class="hidden">
+      <h3>🏆 Referral Leaderboard</h3>
+      <div id="mmo15Leaderboard"></div>
+      <p class="muted">
+        Only real, verified results should be published.
+        Local records cannot provide a global ranking.
+      </p>
+    </section>
+
+    <!-- 9. REWARDS -->
+    <section id="mmo15-rewards" class="hidden">
+      <h3>🎁 Rewards Centre</h3>
+
+      <div class="item">
+        <b>Referral achievement</b>
+        <p class="muted">
+          Track your verified referral milestones.
+        </p>
+        <div class="bar"><span id="mmo15RewardBar"></span></div>
+        <p id="mmo15RewardText" class="muted">0 of 10 referrals</p>
+      </div>
+
+      <p class="muted">
+        This prototype tracks progress only; it does not issue
+        prizes or guarantee financial rewards.
+      </p>
+    </section>
+
+    <!-- 10. PROFILE -->
+    <section id="mmo15-profile" class="hidden">
+      <h3>👤 Profile Settings</h3>
+
+      <label for="mmo15FullName">Full name</label>
+      <input id="mmo15FullName" placeholder="Full name">
+
+      <label for="mmo15Phone">Phone number</label>
+      <input id="mmo15Phone" placeholder="Phone number">
+
+      <button class="primary" onclick="mmo15SaveProfile()">
+        SAVE PROFILE
+      </button>
+    </section>
+
+    <!-- 11. PASSWORD FORM -->
+    <section id="mmo15-password" class="hidden">
+      <h3>🔑 Password Settings</h3>
+
+      <p class="muted">
+        Password changes require a real authentication backend.
+        This form does not change your existing account password.
+      </p>
+
+      <label for="mmo15OldPass">Current password</label>
+      <input id="mmo15OldPass" type="password"
+        autocomplete="current-password">
+
+      <label for="mmo15NewPass">New password</label>
+      <input id="mmo15NewPass" type="password"
+        autocomplete="new-password">
+
+      <button onclick="mmo15PasswordInfo()">
+        CHECK PASSWORD REQUIREMENTS
+      </button>
+    </section>
+
+    <!-- 12. ANALYTICS -->
+    <section id="mmo15-analytics" class="hidden">
+      <h3>📊 My Activity</h3>
+      <div id="mmo15Analytics"></div>
+    </section>
+
+    <!-- 13. EXPORT -->
+    <section id="mmo15-export" class="hidden">
+      <h3>📥 Download My Records</h3>
+      <p class="muted">
+        Export the local task, withdrawal and notification records
+        associated with this browser profile.
+      </p>
+      <button class="primary" onclick="mmo15Export()">
+        DOWNLOAD MY RECORDS
+      </button>
+    </section>
+
+    <!-- 14. PRIVACY -->
+    <section id="mmo15-privacy" class="hidden">
+      <h3>🛡️ Privacy & User Agreement</h3>
+
+      <div class="item">
+        <b>Data collected</b>
+        <p class="muted">
+          This prototype may store the username, profile information,
+          task submissions, withdrawal requests and notifications
+          entered into these forms.
+        </p>
+      </div>
+
+      <div class="item">
+        <b>Where records are stored</b>
+        <p class="muted">
+          The records created by this extension are stored in this
+          browser's local storage. They are not automatically
+          synchronized with the administrator or other devices.
+        </p>
+      </div>
+
+      <div class="item">
+        <b>Important limitations</b>
+        <p class="muted">
+          Browser storage can be lost, edited or accessed by someone
+          using the same device. This prototype does not provide
+          secure centralized authentication, payment verification,
+          or guaranteed backups.
+        </p>
+      </div>
+
+      </body></html>
